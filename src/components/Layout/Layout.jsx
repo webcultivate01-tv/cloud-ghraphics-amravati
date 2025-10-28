@@ -2,6 +2,8 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import WhatsAppButton from './WhatsAppButton'
+import InstagramButton from './InstagramButton'
 
 const Layout = () => {
   return (
@@ -11,6 +13,8 @@ const Layout = () => {
         <Outlet />
       </main>
       <Footer />
+      <WhatsAppButton  className="mt-5"/>
+      <InstagramButton />
     </div>
   )
 }
