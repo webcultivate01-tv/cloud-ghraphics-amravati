@@ -125,20 +125,6 @@ const AboutPreview = () => {
               ))}
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Button 
-                text="Learn More About Me" 
-                to="/about"
-                variant="primary"
-              />
-              <Button 
-                text="View My Portfolio" 
-                to="/work"
-                variant="secondary"
-              />
-            </div>
-
             {/* Quote */}
             <div className="bg-linear-to-r from-violet-500/10 to-fuchsia-500/10 border-l-4 border-violet-500 rounded-r-xl p-6 mt-6">
               <p className="text-white italic text-lg">
