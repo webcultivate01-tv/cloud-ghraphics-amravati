@@ -1,16 +1,22 @@
 import React from 'react'
+import HeroSection from '../components/OurWork/HeroSection'
+import PortfolioGrid from '../components/OurWork/PortfolioGrid'
+import Industries from '../components/OurWork/Industries'
+import CreativeProcess from '../components/OurWork/CreativeProcess'
+import Awards from '../components/OurWork/Awards'
+import Testimonials from '../components/OurWork/Testimonials'
+import CallToAction from '../components/OurWork/CallToAction'
 
 const OurWork = () => {
   return (
-    <div className="min-h-screen bg-slate-950 pt-32 px-6 lg:px-12">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-          <span className="bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
-            Our Work
-          </span>
-        </h1>
-        <p className="text-gray-400 text-lg">Portfolio & Projects Coming Soon...</p>
-      </div>
+    <div className="min-h-screen bg-slate-950 text-white">
+      <HeroSection />
+      <PortfolioGrid />
+      <Industries />
+      <CreativeProcess />
+      <Awards />
+      <Testimonials />
+      <CallToAction />
     </div>
   )
 }

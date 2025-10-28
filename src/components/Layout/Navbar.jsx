@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +25,13 @@ const Navbar = () => {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false)
+  }
+
+  // Helper function to check if link is active
+  const isActive = (path) => {
+    if (path === '/' && location.pathname === '/') return true
+    if (path !== '/' && location.pathname.startsWith(path)) return true
+    return false
   }
 
   return (
@@ -48,27 +56,85 @@ const Navbar = () => {
         
         {/* Desktop Menu */}
         <div className="hidden lg:flex space-x-8 text-gray-300">
-          <Link to="/" className="hover:text-white transition-colors duration-300 font-medium">
+          <Link 
+            to="/" 
+            className={`relative transition-all duration-300 font-medium ${
+              isActive('/') ? 'text-white' : ''
+            }`}
+          >
             Home
+            {isActive('/') && (
+              <>
+                <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-violet-500 via-fuchsia-500 to-indigo-500 animate-pulse-glow"></span>
+                <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-violet-400 to-fuchsia-400 blur-sm"></span>
+              </>
+            )}
           </Link>
-          <Link to="/about" className="hover:text-white transition-colors duration-300 font-medium">
+          <Link 
+            to="/about" 
+            className={`relative transition-all duration-300 font-medium ${
+              isActive('/about') ? 'text-white' : ''
+            }`}
+          >
             About
+            {isActive('/about') && (
+              <>
+                <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-violet-500 via-fuchsia-500 to-indigo-500 animate-pulse-glow"></span>
+                <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-violet-400 to-fuchsia-400 blur-sm"></span>
+              </>
+            )}
           </Link>
-          <Link to="/services" className="hover:text-white transition-colors duration-300 font-medium">
+          <Link 
+            to="/services" 
+            className={`relative transition-all duration-300 font-medium ${
+              isActive('/services') ? 'text-white' : ''
+            }`}
+          >
             Services
+            {isActive('/services') && (
+              <>
+                <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-violet-500 via-fuchsia-500 to-indigo-500 animate-pulse-glow"></span>
+                <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-violet-400 to-fuchsia-400 blur-sm"></span>
+              </>
+            )}
           </Link>
-          <Link to="/work" className="hover:text-white transition-colors duration-300 font-medium">
+          <Link 
+            to="/work" 
+            className={`relative transition-all duration-300 font-medium ${
+              isActive('/work') ? 'text-white' : ''
+            }`}
+          >
             Our Work
+            {isActive('/work') && (
+              <>
+                <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-violet-500 via-fuchsia-500 to-indigo-500 animate-pulse-glow"></span>
+                <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-violet-400 to-fuchsia-400 blur-sm"></span>
+              </>
+            )}
           </Link>
-          <Link to="/contact" className="hover:text-white transition-colors duration-300 font-medium">
+          <Link 
+            to="/contact" 
+            className={`relative transition-all duration-300 font-medium ${
+              isActive('/contact') ? 'text-white' : ''
+            }`}
+          >
             Contact
+            {isActive('/contact') && (
+              <>
+                <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-violet-500 via-fuchsia-500 to-indigo-500 animate-pulse-glow"></span>
+                <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-violet-400 to-fuchsia-400 blur-sm"></span>
+              </>
+            )}
           </Link>
         </div>
         
         {/* Desktop CTA Button */}
-        <button className="hidden md:block bg-linear-to-r from-violet-600 to-fuchsia-600 text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-violet-500/50 transition-all duration-300 font-semibold text-sm">
+        <Link 
+          to="/contact#contact-form" 
+          className="hidden md:block bg-linear-to-r from-violet-600 to-fuchsia-600 text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-violet-500/50 transition-all duration-300 font-semibold text-sm hover:scale-105"
+        >
           Get Started
-        </button>
+        </Link>
 
         {/* Mobile Menu Button */}
         <button 
@@ -90,43 +156,82 @@ const Navbar = () => {
           <Link 
             to="/" 
             onClick={closeMobileMenu}
-            className="text-white text-3xl font-bold hover:text-violet-400 transition-colors duration-300"
+            className={`relative text-3xl font-bold transition-all duration-300 ${
+              isActive('/') 
+                ? 'text-transparent bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text scale-110' 
+                : 'text-white'
+            }`}
           >
             Home
+            {isActive('/') && (
+              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-linear-to-r from-violet-500 via-fuchsia-500 to-indigo-500 rounded-full animate-pulse-glow"></span>
+            )}
           </Link>
           <Link 
             to="/about" 
             onClick={closeMobileMenu}
-            className="text-white text-3xl font-bold hover:text-fuchsia-400 transition-colors duration-300"
+            className={`relative text-3xl font-bold transition-all duration-300 ${
+              isActive('/about') 
+                ? 'text-transparent bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text scale-110' 
+                : 'text-white'
+            }`}
           >
             About
+            {isActive('/about') && (
+              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-linear-to-r from-violet-500 via-fuchsia-500 to-indigo-500 rounded-full animate-pulse-glow"></span>
+            )}
           </Link>
           <Link 
             to="/services" 
             onClick={closeMobileMenu}
-            className="text-white text-3xl font-bold hover:text-indigo-400 transition-colors duration-300"
+            className={`relative text-3xl font-bold transition-all duration-300 ${
+              isActive('/services') 
+                ? 'text-transparent bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text scale-110' 
+                : 'text-white'
+            }`}
           >
             Services
+            {isActive('/services') && (
+              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-linear-to-r from-violet-500 via-fuchsia-500 to-indigo-500 rounded-full animate-pulse-glow"></span>
+            )}
           </Link>
           <Link 
             to="/work" 
             onClick={closeMobileMenu}
-            className="text-white text-3xl font-bold hover:text-violet-400 transition-colors duration-300"
+            className={`relative text-3xl font-bold transition-all duration-300 ${
+              isActive('/work') 
+                ? 'text-transparent bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text scale-110' 
+                : 'text-white'
+            }`}
           >
             Our Work
+            {isActive('/work') && (
+              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-linear-to-r from-violet-500 via-fuchsia-500 to-indigo-500 rounded-full animate-pulse-glow"></span>
+            )}
           </Link>
           <Link 
             to="/contact" 
             onClick={closeMobileMenu}
-            className="text-white text-3xl font-bold hover:text-fuchsia-400 transition-colors duration-300"
+            className={`relative text-3xl font-bold transition-all duration-300 ${
+              isActive('/contact') 
+                ? 'text-transparent bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text scale-110' 
+                : 'text-white'
+            }`}
           >
             Contact
+            {isActive('/contact') && (
+              <span className="absolute -bottom-2 left-0 right-0 h-1 bg-linear-to-r from-violet-500 via-fuchsia-500 to-indigo-500 rounded-full animate-pulse-glow"></span>
+            )}
           </Link>
           
           {/* Mobile CTA */}
-          <button className="bg-linear-to-r from-violet-600 to-fuchsia-600 text-white px-10 py-4 rounded-full hover:shadow-2xl hover:shadow-violet-500/50 transition-all duration-300 font-bold text-lg mt-4">
+          <Link 
+            to="/contact#contact-form" 
+            onClick={closeMobileMenu}
+            className="bg-linear-to-r from-violet-600 to-fuchsia-600 text-white px-10 py-4 rounded-full hover:shadow-2xl hover:shadow-violet-500/50 transition-all duration-300 font-bold text-lg mt-4 hover:scale-105"
+          >
             Get Started
-          </button>
+          </Link>
         </div>
 
         {/* Decorative elements */}

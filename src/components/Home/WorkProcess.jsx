@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const WorkProcess = () => {
   const steps = [
@@ -115,10 +116,13 @@ const WorkProcess = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <p className="text-gray-400 mb-6">Ready to start your project?</p>
-          <button className="group bg-linear-to-r from-violet-600 to-fuchsia-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-violet-500/50 transition-all duration-300 transform hover:-translate-y-1">
+          <Link 
+            to="/contact#contact-form" 
+            className="group inline-flex items-center bg-linear-to-r from-violet-600 to-fuchsia-600 text-white px-10 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-violet-500/50 transition-all duration-300 transform hover:-translate-y-1"
+          >
             Let's Get Started
             <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">→</span>
-          </button>
+          </Link>
         </div>
       </div>
     </section>
