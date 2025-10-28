@@ -32,30 +32,37 @@ const Navbar = () => {
     }`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="text-white z-50">
-          <h1 className="text-2xl sm:text-3xl font-bold bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
-            Cloud Graphics
-          </h1>
-          <p className="text-[10px] sm:text-xs text-gray-400 tracking-widest">AMRAVATI</p>
+        <Link to="/" className="flex items-center gap-3 z-50 group">
+          <img 
+            src="/Logo/logo.png" 
+            alt="Cloud Graphics Logo" 
+            className="h-10 sm:h-12 w-auto transition-transform duration-300 group-hover:scale-110"
+          />
+          <div className="hidden sm:block">
+            <h1 className="text-xl sm:text-2xl font-bold bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
+              Cloud Graphics
+            </h1>
+            <p className="text-[10px] text-gray-400 tracking-widest">AMRAVATI</p>
+          </div>
         </Link>
         
         {/* Desktop Menu */}
         <div className="hidden lg:flex space-x-8 text-gray-300">
-          <a href="#home" className="hover:text-white transition-colors duration-300 font-medium">
+          <Link to="/" className="hover:text-white transition-colors duration-300 font-medium">
             Home
-          </a>
-          <a href="#about" className="hover:text-white transition-colors duration-300 font-medium">
+          </Link>
+          <Link to="/about" className="hover:text-white transition-colors duration-300 font-medium">
             About
-          </a>
-          <a href="#services" className="hover:text-white transition-colors duration-300 font-medium">
+          </Link>
+          <Link to="/services" className="hover:text-white transition-colors duration-300 font-medium">
             Services
-          </a>
-          <a href="#work" className="hover:text-white transition-colors duration-300 font-medium">
-            My Work
-          </a>
-          <a href="#contact" className="hover:text-white transition-colors duration-300 font-medium">
+          </Link>
+          <Link to="/work" className="hover:text-white transition-colors duration-300 font-medium">
+            Our Work
+          </Link>
+          <Link to="/contact" className="hover:text-white transition-colors duration-300 font-medium">
             Contact
-          </a>
+          </Link>
         </div>
         
         {/* Desktop CTA Button */}
@@ -80,41 +87,41 @@ const Navbar = () => {
         isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`}>
         <div className="flex flex-col items-center justify-center h-full space-y-8">
-          <a 
-            href="#home" 
+          <Link 
+            to="/" 
             onClick={closeMobileMenu}
             className="text-white text-3xl font-bold hover:text-violet-400 transition-colors duration-300"
           >
             Home
-          </a>
-          <a 
-            href="#about" 
+          </Link>
+          <Link 
+            to="/about" 
             onClick={closeMobileMenu}
             className="text-white text-3xl font-bold hover:text-fuchsia-400 transition-colors duration-300"
           >
             About
-          </a>
-          <a 
-            href="#services" 
+          </Link>
+          <Link 
+            to="/services" 
             onClick={closeMobileMenu}
             className="text-white text-3xl font-bold hover:text-indigo-400 transition-colors duration-300"
           >
             Services
-          </a>
-          <a 
-            href="#work" 
+          </Link>
+          <Link 
+            to="/work" 
             onClick={closeMobileMenu}
             className="text-white text-3xl font-bold hover:text-violet-400 transition-colors duration-300"
           >
-            My Work
-          </a>
-          <a 
-            href="#contact" 
+            Our Work
+          </Link>
+          <Link 
+            to="/contact" 
             onClick={closeMobileMenu}
             className="text-white text-3xl font-bold hover:text-fuchsia-400 transition-colors duration-300"
           >
             Contact
-          </a>
+          </Link>
           
           {/* Mobile CTA */}
           <button className="bg-linear-to-r from-violet-600 to-fuchsia-600 text-white px-10 py-4 rounded-full hover:shadow-2xl hover:shadow-violet-500/50 transition-all duration-300 font-bold text-lg mt-4">

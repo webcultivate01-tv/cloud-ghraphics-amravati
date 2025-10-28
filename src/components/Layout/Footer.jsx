@@ -14,9 +14,19 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
           {/* Brand */}
           <div className="space-y-4 sm:space-y-6">
-            <h3 className="text-2xl sm:text-3xl font-bold bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
-              Cloud Graphics
-            </h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src="/Logo/logo.png" 
+                alt="Cloud Graphics Logo" 
+                className="h-12 sm:h-14 w-auto"
+              />
+              <div>
+                <h3 className="text-xl sm:text-2xl font-bold bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
+                  Cloud Graphics
+                </h3>
+                <p className="text-[10px] text-gray-400 tracking-widest">AMRAVATI</p>
+              </div>
+            </div>
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
               A passionate freelance designer creating stunning visual experiences that elevate brands and captivate audiences.
             </p>
@@ -159,7 +169,7 @@ const Footer = () => {
             
             {/* Map container */}
             <div className="relative bg-slate-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
-              <div className="aspect-video sm:aspect-[21/9]">
+              <div className="aspect-video sm:aspect-21/9">
                 <iframe 
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3727.444919042942!2d77.74044537458234!3d20.894412192380674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd6bb252ee3027d%3A0x8bcfbf0424a4bfb5!2sCloud%20Ghaphics!5e0!3m2!1sen!2snl!4v1761648411297!5m2!1sen!2snl"
                   className="w-full h-full"

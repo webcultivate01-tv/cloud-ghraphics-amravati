@@ -33,22 +33,31 @@ const WorkProcess = () => {
   ]
 
   return (
-    <section className="relative bg-linear-to-b from-violet-950 to-indigo-950 py-24 overflow-hidden">
+    <section className="relative py-24 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="/bg_img/bg4.jpg" 
+          alt="Background" 
+          className="w-full h-full object-cover"
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-slate-950/70"></div>
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-linear-to-b from-violet-950/50 via-slate-950/40 to-indigo-950/50"></div>
+      </div>
+
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '40px 40px'}}></div>
       </div>
-
-      {/* Decorative blobs */}
-      <div className="absolute top-10 right-10 w-72 h-72 bg-violet-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="absolute bottom-10 left-10 w-72 h-72 bg-fuchsia-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-block mb-4">
             <span className="px-4 py-2 bg-violet-500/20 text-violet-300 rounded-full text-sm font-semibold border border-violet-500/30">
-              My Process
+              Our Process
             </span>
           </div>
           <h2 className="text-5xl font-bold text-white mb-6">
