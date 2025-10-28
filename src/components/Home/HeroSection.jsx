@@ -15,9 +15,9 @@ const HeroSection = () => {
   }, [])
 
   const stats = [
-    { value: "100+", label: "Projects Done" },
-    { value: "50+", label: "Happy Clients" },
-    { value: "5+", label: "Years Experience" }
+    { value: "500+", label: "Projects Done" },
+    { value: "200+", label: "Happy Clients" },
+    { value: "4+", label: "Years Experience" }
   ]
 
   return (
@@ -70,7 +70,7 @@ const HeroSection = () => {
             <div className="space-y-4">
               <div className="inline-block">
                 <span className="bg-violet-500/20 text-violet-300 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium border border-violet-500/30">
-                  ✨ Freelance Graphic Designer
+                  ✨Professional Graphic Design Studio
                 </span>
               </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
@@ -107,7 +107,7 @@ const HeroSection = () => {
           <div className="relative hidden lg:block">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="bg-linear-to-br from-violet-600 to-fuchsia-600 rounded-3xl p-8 h-64 flex items-center justify-center transform hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <div className="bg-linear-to-br from-violet-600 to-fuchsia-600 rounded-3xl p-8 h-64 flex items-center justify-center transform hover:scale-105 transition-transform duration-300 cursor-pointer ">
                   <div className="text-center text-white">
                     <div className="text-6xl mb-2">🎨</div>
                     <div className="font-semibold">Branding</div>
