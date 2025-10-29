@@ -9,7 +9,7 @@ export const servicesData = [
  {
   icon: "📱",
   title: "Social Media Graphics",
-  description: "Creating scroll-stopping visuals that boost your brand’s online presence and engagement.",
+  description: "Eye-catching visuals that elevate your online presence.",
   gradient: "from-indigo-500 to-violet-500",
   features: ["Post Design", "Story Design", "Ad Creatives"]
 },

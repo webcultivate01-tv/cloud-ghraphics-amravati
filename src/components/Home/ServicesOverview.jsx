@@ -36,7 +36,7 @@ const ServicesOverview = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Enhanced Section Header */}
-        <div className="text-center mb-12 sm:mb-16 md:mb-20">
+        <div className="text-center mb-10 sm:mb-16 md:mb-20">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 mb-4 sm:mb-6 group hover:bg-white/10 transition-all duration-300">
             <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-violet-400 rounded-full animate-pulse"></div>
@@ -45,13 +45,13 @@ const ServicesOverview = () => {
           </div>
           
           {/* Title */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6">
-            <span className="block text-white mb-1 sm:mb-2">Our Creative</span>
-            <span className="block bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent animate-gradient">
-              Services
-            </span>
-          </h2>
-          
+           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-center">
+              <span className="inline text-white mr-2">Our Creative</span>
+                 <span className="inline bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent animate-gradient">
+                 Services
+              </span>
+            </h2>
+
           {/* Subtitle */}
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed px-4">
             Comprehensive design solutions tailored to elevate your brand and engage your audience with cutting-edge creativity

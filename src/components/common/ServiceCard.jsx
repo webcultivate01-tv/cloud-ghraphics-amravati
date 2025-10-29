@@ -61,17 +61,30 @@ const ServiceCard = ({ icon, title, description, gradient, features }) => {
           )}
 
           {/* Learn More Link */}
-          <div className="pt-6">
-            <a 
-              href="#" 
-              className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-semibold text-white hover:bg-linear-to-r hover:${gradient} hover:border-transparent group-hover:gap-4 transition-all duration-300 hover:shadow-lg`}
-            >
-              <span>Learn More</span>
-              <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
-                <path d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-              </svg>
-            </a>
-          </div>
+          <div className="pt-6 flex flex-wrap sm:flex-nowrap gap-4">
+  {/* Learn More Button */}
+  <a 
+    href="#" 
+    className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-sm font-semibold text-white hover:bg-gradient-to-r hover:${gradient} hover:border-transparent group-hover:gap-4 transition-all duration-300 hover:shadow-lg whitespace-nowrap`}
+  >
+    <span>Learn More</span>
+    <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+      <path d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+    </svg>
+  </a>
+
+  {/* Order Now Button */}
+  <a 
+    href="#" 
+    className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r ${gradient} text-sm font-semibold text-white border border-transparent hover:opacity-90 transition-all duration-300 shadow-lg whitespace-nowrap`}
+  >
+    <span>Order Now</span>
+    <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+      <path d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+    </svg>
+  </a>
+</div>
+
         </div>
 
         {/* Corner Accent */}
