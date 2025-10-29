@@ -46,8 +46,8 @@ const ContactFormSection = () => {
           {/* Contact Form - Equal 50% width */}
           <div className={`bg-slate-900/50 backdrop-blur-xl border rounded-3xl p-8 md:p-10 transition-all ${
             isHighlighted 
-              ? 'border-red-500 shadow-[0_0_30px_rgba(239,68,68,0.6)] animate-pulse-glow' 
-              : 'border-violet-500/20 hover:border-violet-500/50'
+              ? 'border-4 border-red-500' 
+              : 'border border-violet-500/20 hover:border-violet-500/50'
           }`}>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 bg-linear-to-br from-violet-500 to-fuchsia-500 rounded-2xl flex items-center justify-center text-2xl">
