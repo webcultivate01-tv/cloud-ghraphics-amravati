@@ -1,44 +1,44 @@
 export const servicesData = [
+{
+  icon: "💡",
+  title: "Brand Identity",
+  description: "Crafting powerful brand visuals that tell your story with style.",
+  gradient: "from-violet-500 to-fuchsia-500",
+  features: ["Logo Design", "Brand Guidelines", "Visual Identity"]
+},
+ {
+  icon: "📱",
+  title: "Social Media Graphics",
+  description: "Creating scroll-stopping visuals that boost your brand’s online presence and engagement.",
+  gradient: "from-indigo-500 to-violet-500",
+  features: ["Post Design", "Story Design", "Ad Creatives"]
+},
   {
-    icon: "🎨",
-    title: "Brand Identity",
-    description: "Creating memorable brand identities that resonate with your audience and stand the test of time.",
-    gradient: "from-violet-500 to-fuchsia-500",
-    features: ["Logo Design", "Brand Guidelines", "Visual Identity"]
-  },
-  {
-    icon: "📱",
-    title: "Digital Design",
-    description: "Crafting stunning digital experiences across web, mobile, and social media platforms.",
-    gradient: "from-indigo-500 to-violet-500",
-    features: ["UI/UX Design", "Web Design", "App Design"]
-  },
-  {
-    icon: "📸",
-    title: "Photography",
-    description: "Professional photography services that capture your products and moments in the best light.",
+    icon: "🖼️",
+    title: "Marketing & Print Design",
+    description: "High-quality marketing and print materials designed to boost your business presence.",
     gradient: "from-fuchsia-500 to-pink-500",
-    features: ["Product Photos", "Event Coverage", "Portrait"]
+    features: ["Creative Posters","Brochure & Catalogue Design","Event Branding"]
   },
-  {
-    icon: "🎬",
-    title: "Video Production",
-    description: "Engaging video content that tells your story and captivates your audience.",
-    gradient: "from-violet-500 to-indigo-500",
-    features: ["Ads", "Corporate Videos", "Social Content"]
-  },
-  {
-    icon: "🖨️",
-    title: "Print Design",
-    description: "Beautiful print materials that make a lasting impression in the physical world.",
-    gradient: "from-indigo-500 to-fuchsia-500",
-    features: ["Brochures", "Packaging", "Marketing Materials"]
-  },
-  {
-    icon: "✨",
-    title: "Motion Graphics",
-    description: "Dynamic animations and motion graphics that bring your ideas to life.",
-    gradient: "from-fuchsia-500 to-violet-500",
-    features: ["Animations", "Explainer Videos", "Logo Animation"]
-  }
+{
+  icon: "👕",
+  title: "Stationery & Apparel",
+  description: "Creating personalized stationery and apparel that showcase your brand’s style and professionalism.",
+  gradient: "from-amber-500 to-orange-500",
+  features: ["Letterheads & Envelopes", "T-Shirts & Hoodies", "Branded Merchandise"]
+},
+{
+  icon: "🏷️",
+  title: "Product Label & Sticker Design",
+  description: "Designing unique and eye-catching product labels and stickers that make your brand stand out on every shelf.",
+  gradient: "from-emerald-500 to-teal-500",
+  features: ["Product Labels", "Stickers & Tags", "Packaging Design"]
+},
+{
+  icon: "📦",
+  title: "Packaging Design",
+  description: "Creating visually striking and functional packaging that enhances product appeal and strengthens brand identity.",
+  gradient: "from-cyan-500 to-sky-500",
+  features: ["Box Design", "Pouch Design", "Product Mockups"]
+}
 ]
