@@ -10,62 +10,44 @@ const AboutPreview = () => {
   ]
 
   return (
-    <section id="about" className="relative bg-linear-to-br from-slate-900 via-indigo-950 to-violet-950 py-24 overflow-hidden">
+  <section id="about" className="relative bg-linear-to-br from-slate-900 via-indigo-950 to-violet-950 py-10 sm:py-14 lg:py-20 px-4 overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-violet-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-fuchsia-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+        <div className="absolute top-0 left-0 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-violet-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+        <div className="absolute top-0 right-0 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-fuchsia-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
       </div>
       
       {/* Floating shapes */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/4 left-10 w-20 h-20 border-4 border-violet-400 rotate-45 animate-pulse"></div>
-        <div className="absolute top-1/3 right-20 w-16 h-16 bg-fuchsia-400/30 rounded-full animate-bounce" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-1/4 left-1/4 w-24 h-24 border-4 border-indigo-400 rounded-full animate-spin" style={{animationDuration: '10s'}}></div>
-        <div className="absolute bottom-1/3 right-1/3 w-12 h-12 bg-violet-400/20 rotate-12"></div>
+        <div className="absolute top-1/4 left-4 sm:left-10 w-12 sm:w-20 h-12 sm:h-20 border-4 border-violet-400 rotate-45 animate-pulse"></div>
+        <div className="absolute top-1/3 right-4 sm:right-20 w-10 sm:w-16 h-10 sm:h-16 bg-fuchsia-400/30 rounded-full animate-bounce" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-1/4 left-8 sm:left-1/4 w-16 sm:w-24 h-16 sm:h-24 border-4 border-indigo-400 rounded-full animate-spin" style={{animationDuration: '10s'}}></div>
+        <div className="absolute bottom-1/3 right-1/3 w-8 sm:w-12 h-8 sm:h-12 bg-violet-400/20 rotate-12"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+  <div className="container mx-auto px-4 relative z-10">
+  <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Left: Visual Section */}
           <div className="relative">
-            {/* Main Image Card */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
-              <div className="aspect-square bg-linear-to-br from-violet-600 via-fuchsia-600 to-indigo-600 p-1">
-                <div className="bg-slate-900 h-full rounded-3xl p-8 flex items-center justify-center">
-                  <div className="text-center space-y-6">
-                    <div className="text-6xl mb-6">🎨</div>
-                    <h3 className="text-white text-3xl font-bold">Creative Excellence</h3>
+            {/* Main Image Card (responsive) */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl sm:hover:scale-105 transition-transform duration-500 w-full sm:max-w-sm mx-auto">
+              <div className="w-full aspect-square sm:aspect-4/3 bg-linear-to-br from-violet-600 via-fuchsia-600 to-indigo-600 p-1">
+                <div className="bg-slate-900 h-full rounded-3xl p-3 sm:p-5 flex items-center justify-center">
+                  <div className="text-center space-y-4">
+                    <div className="text-3xl sm:text-5xl mb-3">🎨</div>
+                    <h3 className="text-white text-lg sm:text-2xl font-bold">Creative Excellence</h3>
                     <p className="text-gray-300">Transforming ideas into visual masterpieces</p>
+
                     
-                    {/* Stats Grid */}
-                    <div className="grid grid-cols-2 gap-4 mt-8">
-                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                        <div className="text-white text-3xl font-bold">100+</div>
-                        <div className="text-gray-300 text-sm">Projects Done</div>
-                      </div>
-                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                        <div className="text-white text-3xl font-bold">50+</div>
-                        <div className="text-gray-300 text-sm">Happy Clients</div>
-                      </div>
-                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                        <div className="text-white text-3xl font-bold">5+</div>
-                        <div className="text-gray-300 text-sm">Years Experience</div>
-                      </div>
-                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                        <div className="text-white text-3xl font-bold">24/7</div>
-                        <div className="text-gray-300 text-sm">Support</div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Floating Cards */}
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-2xl transform -rotate-6 hidden lg:block">
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-2xl transform -rotate-6 hidden lg:block">
               <div className="flex items-center gap-4">
                 <div className="text-4xl">⚡</div>
                 <div>
@@ -75,7 +57,7 @@ const AboutPreview = () => {
               </div>
             </div>
 
-            <div className="absolute -top-6 -right-6 bg-white rounded-2xl p-6 shadow-2xl transform rotate-6 hidden lg:block">
+            <div className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-2xl transform rotate-6 hidden lg:block">
               <div className="text-center">
                 <div className="text-4xl mb-2">🏆</div>
                 <div className="font-bold">Quality First</div>
@@ -91,7 +73,7 @@ const AboutPreview = () => {
               </span>
             </div>
 
-            <h2 className="text-5xl font-bold text-white leading-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
               Your Creative Partner for
               <span className="block bg-linear-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
                 Visual Excellence

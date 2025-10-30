@@ -92,7 +92,7 @@ const ServicesOverview = () => {
         {/* Premium CTA Section */}
         <div className="relative mt-16 flex justify-end pr-6">
           {/* Outer wrapper with increased width */}
-          <div className="relative w-full sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[65%]">
+          <div className="relative w-full sm:w-[92%] md:w-[86%] lg:w-[75%] xl:w-[70%]">
 
     {/* Animated organic border using SVG mask */}
     <div className="absolute inset-0">
@@ -131,8 +131,8 @@ const ServicesOverview = () => {
   <div className="absolute inset-0 bg-linear-to-r from-violet-500/10 via-fuchsia-500/10 to-indigo-500/10 blur-2xl"></div>
 
       {/* Main content */}
-      <div className="relative p-10 md:p-14">
-        <h3 className="text-4xl md:text-5xl font-bold mb-4">
+      <div className="relative p-6 md:p-10">
+        <h3 className="text-3xl md:text-4xl font-bold mb-4">
           <span className="block text-white">Let's Bring Your</span>
           <span className="block bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent animate-gradient">
             Vision to Life
@@ -148,7 +148,7 @@ const ServicesOverview = () => {
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
 
-          <button onClick={()=>navigate('/contacts')} className="group inline-flex items-center justify-center px-8 py-3 bg-white/5 backdrop-blur-sm border border-white/20 text-white rounded-full font-semibold hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105">
+          <button onClick={()=>navigate('/contacts')} className="group inline-flex items-center justify-center px-6 py-2 bg-white/5 backdrop-blur-sm border border-white/20 text-white rounded-full font-semibold hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105">
             Start Your Project
           </button>
         </div>
