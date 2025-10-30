@@ -90,9 +90,9 @@ const ServicesOverview = () => {
         </div>
 
         {/* Premium CTA Section */}
-        <div className="relative mt-16 flex justify-center">
+        <div className="relative mt-16 flex justify-end pr-6">
           {/* Outer wrapper with increased width */}
-          <div className="relative w-full sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[65%] mx-auto">
+          <div className="relative w-full sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[65%]">
 
     {/* Animated organic border using SVG mask */}
     <div className="absolute inset-0">
@@ -149,7 +149,7 @@ const ServicesOverview = () => {
         <div className="flex flex-col sm:flex-row gap-4">
 
           <button onClick={()=>navigate('/contacts')} className="group inline-flex items-center justify-center px-8 py-3 bg-white/5 backdrop-blur-sm border border-white/20 text-white rounded-full font-semibold hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105">
-            Let's Talk
+            Start Your Project
           </button>
         </div>
       </div>
