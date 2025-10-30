@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import logo from "../../assets/webcultivatelogo.png"
 
 const Footer = () => {
   return (
@@ -239,23 +240,30 @@ const Footer = () => {
             </div>
             
             {/* Credit Badge (Center on desktop, Top on mobile) */}
-            <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2 px-4 py-2 bg-slate-800/30 backdrop-blur-xl border border-violet-500/20 rounded-full text-xs text-gray-500 hover:border-violet-500/40 transition-colors text-center">
-              <span>✨</span>
-              <span>This Website is Crafted with passion by</span>
-              
-              {/* vvv THIS IS THE FIX vvv */}
-              <a 
-                href="https://webcultivate.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="font-semibold cursor-pointer"
-              >
-                <span className="bg-linear-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-                  WebCultivate Team
-                </span>
-              </a>
-              {/* ^^^ THIS IS THE FIX ^^^ */}
-            </div>
+<div className="flex flex-col items-center text-center px-4 py-2 text-xs text-gray-400">
+  {/* Circle Logo */}
+  <div className="w-[70px] h-[70px] rounded-full overflow-hidden flex items-center justify-center">
+    <img
+      src={logo}
+      alt="WebCultivate Logo"
+      className="w-full h-full object-cover"
+    />
+  </div>
+
+  {/* Text Line */}
+  <p className="mt-3 text-[12px] sm:text-sm">
+    Designed and Developed by{" "}
+    <a
+      href="https://webcultivate.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-linear-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent font-semibold"
+    >
+      WebCultivate
+    </a>
+  </p>
+</div>
+
 
             {/* Legal Links (Right) */}
             <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-gray-400 text-sm">
