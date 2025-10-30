@@ -15,15 +15,40 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-linear-to-r from-violet-600/10 via-fuchsia-600/10 to-indigo-600/10 animate-gradient"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto text-center">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">
-          <span className="bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
-            Get In Touch 💬
-          </span>
-        </h1>
-        <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-          Have a project in mind? Let's discuss how we can bring your creative vision to life. We're excited to hear from you!
-        </p>
+      <div className="relative max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        {/* Left: Headline and Description */}
+        <div className="md:w-2/3 text-left md:pr-12">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">
+            <span className="bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
+              Get In Touch
+            </span>
+          </h1>
+          <p className="text-gray-300 text-lg md:text-2xl max-w-2xl leading-relaxed mb-6">
+            Ready to start your next project or have questions? Reach out and let's create something amazing together. We're here to help you every step of the way.
+          </p>
+          <p className="text-gray-400 text-base md:text-lg max-w-xl">
+            Contact us for collaborations, inquiries, or just to say hello. Your creative journey begins here.
+          </p>
+        </div>
+        {/* Right: Vertical Feature List */}
+        <div className="md:w-1/3 flex flex-col gap-6 items-center">
+          <div className="flex items-center gap-4 bg-slate-900/60 rounded-xl px-6 py-4 shadow-lg border border-fuchsia-500/20 w-full min-w-[220px] max-w-[260px]">
+            <span className="text-3xl">📞</span>
+            <span className="text-lg font-semibold text-fuchsia-300">Call Us</span>
+          </div>
+          <div className="flex items-center gap-4 bg-slate-900/60 rounded-xl px-6 py-4 shadow-lg border border-violet-500/20 w-full min-w-[220px] max-w-[260px]">
+            <span className="text-3xl">✉️</span>
+            <span className="text-lg font-semibold text-violet-300">Email Support</span>
+          </div>
+          <div className="flex items-center gap-4 bg-slate-900/60 rounded-xl px-6 py-4 shadow-lg border border-indigo-500/20 w-full min-w-[220px] max-w-[260px]">
+            <span className="text-3xl">💬</span>
+            <span className="text-lg font-semibold text-indigo-300">Live Chat</span>
+          </div>
+          <div className="flex items-center gap-4 bg-slate-900/60 rounded-xl px-6 py-4 shadow-lg border border-fuchsia-500/20 w-full min-w-[220px] max-w-[260px]">
+            <span className="text-3xl">📍</span>
+            <span className="text-lg font-semibold text-fuchsia-300">Visit Us</span>
+          </div>
+        </div>
       </div>
     </section>
   )
