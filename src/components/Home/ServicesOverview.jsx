@@ -1,9 +1,10 @@
 import React from 'react'
-import SectionHeader from '../common/SectionHeader'
 import ServiceCard from '../common/ServiceCard'
 import { servicesData } from '../../data/servicesData'
+import { Link, useNavigate } from 'react-router-dom'
 
 const ServicesOverview = () => {
+  const navigate = useNavigate();
   return (
     <section id="services" className="relative bg-linear-to-b from-indigo-950 via-slate-900 to-violet-950 py-16 sm:py-24 md:py-32 overflow-hidden">
       {/* Animated Background Elements */}
@@ -66,8 +67,8 @@ const ServicesOverview = () => {
         </div>
 
         {/* Enhanced Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
-          {servicesData.map((service, index) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
+          {servicesData.slice(0, 3).map((service, index) => (
             <div 
               key={index}
               className="opacity-0 animate-fade-in-up"
@@ -78,10 +79,20 @@ const ServicesOverview = () => {
           ))}
         </div>
 
+        {/* View All button */}
+        <div className="flex justify-center mt-8">
+          <Link to="/services" className="inline-flex items-center gap-3 px-6 py-3 bg-linear-to-r from-violet-600 via-fuchsia-600 to-indigo-600 text-white rounded-full font-semibold hover:scale-105 transition-all duration-300 shadow-lg">
+            View All Services
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+              <path d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </Link>
+        </div>
+
         {/* Premium CTA Section */}
-           <div className="relative mt-16 flex justify-end pr-6">
-  {/* Outer wrapper with increased width */}
-  <div className="relative w-full sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[65%]">
+        <div className="relative mt-16 flex justify-center">
+          {/* Outer wrapper with increased width */}
+          <div className="relative w-full sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[65%] mx-auto">
 
     {/* Animated organic border using SVG mask */}
     <div className="absolute inset-0">
@@ -114,10 +125,10 @@ const ServicesOverview = () => {
     </div>
 
     {/* Inner content card */}
-    <div className="relative bg-linear-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90 backdrop-blur-xl border border-white/20 rounded-[2rem] overflow-hidden group hover:border-white/40 transition-all duration-500 hover:shadow-2xl hover:shadow-violet-500/20">
+  <div className="relative bg-linear-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90 backdrop-blur-xl border border-white/20 rounded-4xl overflow-hidden group hover:border-white/40 transition-all duration-500 hover:shadow-2xl hover:shadow-violet-500/20">
 
       {/* Background glowing gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-fuchsia-500/10 to-indigo-500/10 blur-2xl"></div>
+  <div className="absolute inset-0 bg-linear-to-r from-violet-500/10 via-fuchsia-500/10 to-indigo-500/10 blur-2xl"></div>
 
       {/* Main content */}
       <div className="relative p-10 md:p-14">
@@ -136,16 +147,8 @@ const ServicesOverview = () => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <button className="group relative px-8 py-3 bg-linear-to-r from-violet-600 via-fuchsia-600 to-indigo-600 text-white rounded-full font-semibold overflow-hidden hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-violet-600/40">
-            <span className="relative z-10 flex items-center justify-center gap-2">
-              <span>Start Project</span>
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-              </svg>
-            </span>
-          </button>
 
-          <button className="group px-8 py-3 bg-white/5 backdrop-blur-sm border border-white/20 text-white rounded-full font-semibold hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105">
+          <button onClick={()=>navigate('/contacts')} className="group inline-flex items-center justify-center px-8 py-3 bg-white/5 backdrop-blur-sm border border-white/20 text-white rounded-full font-semibold hover:bg-white/10 hover:border-white/40 transition-all duration-300 hover:scale-105">
             Let's Talk
           </button>
         </div>
