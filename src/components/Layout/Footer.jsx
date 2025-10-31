@@ -46,7 +46,7 @@ const Footer = () => {
 
           {/* Social Media (Right) */}
 <div className="md:w-1/2 lg:w-auto">
-  <h5 className="text-sm font-semibold mb-3 text-gray-300 md:text-right">Follow Us</h5>
+   <h5 className="text-sm font-semibold mb-3 text-gray-300 text-center">Follow Us</h5>
   <div className="flex gap-3 md:justify-end">
     {[
       { icon: <FaFacebookF />, color: "hover:bg-blue-600 hover:shadow-blue-500/50" },

@@ -56,11 +56,14 @@ const Navbar = () => {
 
   return (
     // vvv FIX 1: Make transition to transparent fast (100ms), but fade-in slow (300ms) vvv
-    <nav className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4 sm:py-6 lg:px-12 transition-all ${isMobileMenuOpen ? 'duration-100' : 'duration-300'} ${
-      (isScrolled && !isMobileMenuOpen)
-        ? 'bg-slate-950/95 backdrop-blur-md shadow-lg' 
-        : 'bg-transparent'
-    }`}>
+<nav
+  className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-4 sm:py-6 lg:px-12 
+  transition-all ${isMobileMenuOpen ? 'duration-100' : 'duration-300'} 
+  ${(isScrolled && !isMobileMenuOpen)
+    ? 'bg-gradient-to-r from-purple-950 via-black to-purple-950 backdrop-blur-md shadow-lg'
+    : 'bg-transparent'
+  }`}
+>
       
       {/* Main container with 3-column layout fix */}
       <div className="max-w-7xl mx-auto flex justify-between items-center">
