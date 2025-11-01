@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import WhatsAppButton from '../Layout/WhatsAppButton'
+import CallButton from '../Layout/CallButton'
 
 const Layout = () => {
   const location = useLocation()
@@ -30,6 +31,7 @@ const Layout = () => {
         <Outlet />
       </main>
      <WhatsAppButton/>
+      <CallButton/>
       <Footer />
     </div>
   )

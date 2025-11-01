@@ -1,4 +1,4 @@
-# 🎨 Cloud Graphics - Portfolio Website
+# 🎨 Cloud Graphics - Bussiness Website
 
 A modern, stunning portfolio website for Cloud Graphics - a creative design studio specializing in brand identity, digital design, photography, and video production. Built with cutting-edge web technologies and featuring premium animations, glass-morphism effects, and a fully responsive design.
 
