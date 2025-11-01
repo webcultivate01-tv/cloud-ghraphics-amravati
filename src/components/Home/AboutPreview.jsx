@@ -33,14 +33,28 @@ const AboutPreview = () => {
           <div className="relative">
             {/* Main Image Card (responsive) */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl sm:hover:scale-105 transition-transform duration-500 w-full sm:max-w-sm mx-auto">
-              <div className="w-full aspect-square sm:aspect-4/3 bg-linear-to-br from-violet-600 via-fuchsia-600 to-indigo-600 p-1">
-                <div className="bg-slate-900 h-full rounded-3xl p-3 sm:p-5 flex items-center justify-center">
-                  <div className="text-center space-y-4">
-                    <div className="text-3xl sm:text-5xl mb-3">🎨</div>
-                    <h3 className="text-white text-lg sm:text-2xl font-bold">Creative Excellence</h3>
-                    <p className="text-gray-300">Transforming ideas into visual masterpieces</p>
-
-                    
+              <div className="w-full bg-linear-to-br from-violet-600 via-fuchsia-600 to-indigo-600 p-1">
+                <div className="bg-slate-900 rounded-3xl p-8 sm:p-10 flex items-center justify-center min-h-[400px] sm:min-h-[450px]">
+                  <div className="text-center space-y-5">
+                    <div className="relative inline-block">
+                      <div className="absolute inset-0 bg-violet-500 blur-2xl opacity-50 animate-pulse"></div>
+                      <div className="relative text-5xl sm:text-6xl mb-4">🎨</div>
+                    </div>
+                    <h3 className="text-white text-2xl sm:text-3xl font-bold leading-tight">
+                      Creative
+                      <span className="block bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent mt-1">
+                        Excellence
+                      </span>
+                    </h3>
+                    <p className="text-gray-300 text-base sm:text-lg leading-relaxed px-2">
+                      Transforming ideas into stunning visual masterpieces that captivate and inspire
+                    </p>
+                    <div className="flex justify-center gap-4 pt-4">
+                      <div className="flex items-center gap-2 bg-violet-500/20 rounded-full px-4 py-2">
+                        <span className="text-violet-400 text-xl">✨</span>
+                        <span className="text-violet-300 text-sm font-medium">Premium Design</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -57,7 +71,7 @@ const AboutPreview = () => {
               </div>
             </div>
 
-            <div className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-2xl transform rotate-6 hidden lg:block">
+            <div className="absolute -top-5 right-4 bg-white rounded-2xl p-4 shadow-2xl transform rotate-6 hidden lg:block">
               <div className="text-center">
                 <div className="text-4xl mb-2">🏆</div>
                 <div className="font-bold">Quality First</div>

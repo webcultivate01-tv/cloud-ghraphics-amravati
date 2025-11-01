@@ -90,9 +90,37 @@ const ServicesOverview = () => {
         </div>
 
         {/* Premium CTA Section */}
-        <div className="relative mt-16 flex justify-end pr-6">
-          {/* Outer wrapper with increased width */}
-          <div className="relative w-full sm:w-[92%] md:w-[86%] lg:w-[75%] xl:w-[70%]">
+        <div className="relative mt-16">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            
+            {/* Left: Image Section */}
+            <div className="relative group">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <div className="aspect-4/3 bg-linear-to-br from-violet-600 via-fuchsia-600 to-indigo-600 p-1">
+                  <div className="bg-slate-900 h-full rounded-3xl flex items-center justify-center">
+                    {/* Placeholder - Replace src with your image path */}
+                    <div className="text-center p-8">
+                      <div className="text-6xl mb-4">🎨</div>
+                      <p className="text-gray-400 text-lg">Add your creative image here</p>
+                      <p className="text-gray-500 text-sm mt-2">Recommended: 600x450px</p>
+                    </div>
+                    {/* Uncomment below and add your image path */}
+                    {/* <img 
+                      src="/path/to/your/image.jpg" 
+                      alt="Creative Work" 
+                      className="w-full h-full object-cover rounded-3xl group-hover:scale-110 transition-transform duration-700"
+                    /> */}
+                  </div>
+                </div>
+                {/* Gradient overlay for when image is added */}
+                <div className="absolute inset-0 bg-linear-to-t from-slate-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+              </div>
+            </div>
+
+            {/* Right: CTA Content */}
+            <div className="relative">
+              {/* Outer wrapper */}
+              <div className="relative w-full">
 
     {/* Animated organic border using SVG mask */}
     <div className="absolute inset-0">
@@ -155,7 +183,10 @@ const ServicesOverview = () => {
       </div>
     </div>
   </div>
-</div>
+            </div>
+
+          </div>
+        </div>
 
       </div>
     </section>

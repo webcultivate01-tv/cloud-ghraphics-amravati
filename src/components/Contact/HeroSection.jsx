@@ -6,11 +6,11 @@ const HeroSection = () => {
       {/* Background Image with Animation */}
       <div className="absolute inset-0 overflow-hidden">
         <img 
-          src="/bg_img/bg3.jpg" 
+          src="/bg_img/bg6.jpg" 
           alt="Background" 
           className="w-full h-full object-cover opacity-60 animate-[zoom_20s_ease-in-out_infinite_alternate]"
         />
-        <div className="absolute inset-0 bg-slate-950/40"></div>
+        <div className="absolute inset-0 bg-slate-950/60"></div>
         {/* Animated gradient overlay */}
         <div className="absolute inset-0 bg-linear-to-r from-violet-600/10 via-fuchsia-600/10 to-indigo-600/10 animate-gradient"></div>
       </div>
