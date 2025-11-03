@@ -3,7 +3,6 @@ import HeroSection from '../components/About/HeroSection'
 import OurStory from '../components/About/OurStory'
 import CoreValues from '../components/About/CoreValues'
 import Timeline from '../components/About/Timeline'
-import Team from '../components/About/Team'
 import CallToAction from '../components/About/CallToAction'
 
 const About = () => {
@@ -13,7 +12,6 @@ const About = () => {
       <OurStory />
       <CoreValues />
       <Timeline />
-      <Team />
       <CallToAction />
     </div>
   )

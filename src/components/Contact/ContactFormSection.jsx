@@ -1,28 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import React, { useState } from 'react'
 
 const ContactFormSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    firstName: '',
+    lastName: '',
     phone: '',
-    subject: '',
-    message: ''
+    email: '',
+    message: '',
+    subject: 'general'
   })
-  const [isHighlighted, setIsHighlighted] = useState(false)
-  const location = useLocation()
-
-  useEffect(() => {
-    // Check if hash is #contact-form
-    if (location.hash === '#contact-form') {
-      setIsHighlighted(true)
-      // Remove highlight after 5 seconds
-      const timer = setTimeout(() => {
-        setIsHighlighted(false)
-      }, 5000)
-      return () => clearTimeout(timer)
-    }
-  }, [location])
 
   const handleChange = (e) => {
     setFormData({
@@ -36,283 +22,265 @@ const ContactFormSection = () => {
     // Handle form submission here
     console.log('Form submitted:', formData)
     alert('Thank you for reaching out! We will get back to you soon. 🎉')
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+    setFormData({ firstName: '', lastName: '', phone: '', email: '', message: '', subject: 'general' })
   }
 
   return (
-    <section id="contact-form" className="py-8 sm:py-10 lg:py-12 px-4 sm:px-6 lg:px-12">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-start">
-          {/* Contact Form - Equal 50% width */}
-          <div className={`bg-slate-900/50 backdrop-blur-xl border rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 lg:p-10 transition-all ${
-            isHighlighted 
-              ? 'border-4 border-red-500' 
-              : 'border border-violet-500/20 hover:border-violet-500/50'
-          }`}>
-            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-violet-500 to-fuchsia-500 rounded-xl sm:rounded-2xl flex items-center justify-center text-xl sm:text-2xl shrink-0">
-                📧
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-bold">
-                <span className="bg-linear-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-                  Send Us a Message
-                </span>
-              </h2>
-            </div>
-            <p className="text-gray-400 text-sm sm:text-base mb-6 sm:mb-8">Fill out the form below and we'll get back to you as soon as possible!</p>
+    <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-slate-950">
+      <div className="max-w-5xl max-lg:max-w-3xl mx-auto bg-slate-900/50 backdrop-blur-xl border border-violet-500/20 p-6 sm:p-8 rounded-2xl">
+        {/* Header */}
+        <div className="text-center px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-linear-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Contact Us</h2>
+          <p className="text-sm sm:text-base text-gray-400 mt-3 sm:mt-4">Have some big idea or brand to develop and need help?</p>
+        </div>
+
+        {/* Main Content */}
+        <div className="grid lg:grid-cols-5 items-start p-4 sm:p-6 bg-slate-900/30 border border-violet-500/10 rounded-xl mt-8 sm:mt-12">
+          {/* Contact Information Sidebar */}
+          <div className="lg:col-span-2 bg-linear-to-br from-violet-600/20 to-fuchsia-600/20 rounded-xl p-4 sm:p-6 h-full max-lg:order-1 relative overflow-hidden max-lg:mt-8 lg:mt-0 border border-violet-500/30">
+            <h3 className="text-xl sm:text-2xl text-white font-medium">Contact Information</h3>
+            <p className="text-sm sm:text-base text-gray-300 leading-relaxed mt-3 sm:mt-4">Have some big idea or brand to develop and need help?</p>
             
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-              <div>
-                <label htmlFor="name" className="flex items-center gap-2 text-white font-semibold mb-2 text-sm sm:text-base">
-                  <span className="text-violet-400">👤</span>
-                  Full Name *
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3.5 bg-slate-800/50 border border-violet-500/30 rounded-xl text-white text-sm sm:text-base placeholder-gray-500 focus:outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 transition-all"
-                  placeholder="John Doe"
-                />
-              </div>
+            {/* Contact Details */}
+            <div className="mt-12 sm:mt-16 relative z-50">
+              <ul className="space-y-6 sm:space-y-8">
+                {/* Email */}
+                <li className="flex items-center text-gray-300 hover:text-violet-400 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16px" height="16px" viewBox="0 0 479.058 479.058" className="shrink-0">
+                    <path d="M434.146 59.882H44.912C20.146 59.882 0 80.028 0 104.794v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159L239.529 264.631 39.173 90.982a14.902 14.902 0 0 1 5.738-1.159zm0 299.411H44.912c-8.26 0-14.971-6.71-14.971-14.971V122.615l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z" data-original="#000000" />
+                  </svg>
+                  <a href="mailto:info@example.com" className="text-sm sm:text-base ml-3 sm:ml-4">
+                    info@example.com
+                  </a>
+                </li>
 
-              <div>
-                <label htmlFor="email" className="flex items-center gap-2 text-white font-semibold mb-2 text-sm sm:text-base">
-                  <span className="text-violet-400">📧</span>
-                  Email Address *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3.5 bg-slate-800/50 border border-violet-500/30 rounded-xl text-white text-sm sm:text-base placeholder-gray-500 focus:outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 transition-all"
-                  placeholder="john@example.com"
-                />
-              </div>
+                {/* Phone */}
+                <li className="flex items-center text-gray-300 hover:text-violet-400 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16px" height="16px" viewBox="0 0 482.6 482.6" className="shrink-0">
+                    <path d="M98.339 320.8c47.6 56.9 104.9 101.7 170.3 133.4 24.9 11.8 58.2 25.8 95.3 28.2 2.3.1 4.5.2 6.8.2 24.9 0 44.9-8.6 61.2-26.3.1-.1.3-.3.4-.5 5.8-7 12.4-13.3 19.3-20 4.7-4.5 9.5-9.2 14.1-14 21.3-22.2 21.3-50.4-.2-71.9l-60.1-60.1c-10.2-10.6-22.4-16.2-35.2-16.2-12.8 0-25.1 5.6-35.6 16.1l-35.8 35.8c-3.3-1.9-6.7-3.6-9.9-5.2-4-2-7.7-3.9-11-6-32.6-20.7-62.2-47.7-90.5-82.4-14.3-18.1-23.9-33.3-30.6-48.8 9.4-8.5 18.2-17.4 26.7-26.1 3-3.1 6.1-6.2 9.2-9.3 10.8-10.8 16.6-23.3 16.6-36s-5.7-25.2-16.6-36l-29.8-29.8c-3.5-3.5-6.8-6.9-10.2-10.4-6.6-6.8-13.5-13.8-20.3-20.1-10.3-10.1-22.4-15.4-35.2-15.4-12.7 0-24.9 5.3-35.6 15.5l-37.4 37.4c-13.6 13.6-21.3 30.1-22.9 49.2-1.9 23.9 2.5 49.3 13.9 80 17.5 47.5 43.9 91.6 83.1 138.7zm-72.6-216.6c1.2-13.3 6.3-24.4 15.9-34l37.2-37.2c5.8-5.6 12.2-8.5 18.4-8.5 6.1 0 12.3 2.9 18 8.7 6.7 6.2 13 12.7 19.8 19.6 3.4 3.5 6.9 7 10.4 10.6l29.8 29.8c6.2 6.2 9.4 12.5 9.4 18.7s-3.2 12.5-9.4 18.7c-3.1 3.1-6.2 6.3-9.3 9.4-9.3 9.4-18 18.3-27.6 26.8l-.5.5c-8.3 8.3-7 16.2-5 22.2.1.3.2.5.3.8 7.7 18.5 18.4 36.1 35.1 57.1 30 37 61.6 65.7 96.4 87.8 4.3 2.8 8.9 5 13.2 7.2 4 2 7.7 3.9 11 6 .4.2.7.4 1.1.6 3.3 1.7 6.5 2.5 9.7 2.5 8 0 13.2-5.1 14.9-6.8l37.4-37.4c5.8-5.8 12.1-8.9 18.3-8.9 7.6 0 13.8 4.7 17.7 8.9l60.3 60.2c12 12 11.9 25-.3 37.7-4.2 4.5-8.6 8.8-13.3 13.3-7 6.8-14.3 13.8-20.9 21.7-11.5 12.4-25.2 18.2-42.9 18.2-1.7 0-3.5-.1-5.2-.2-32.8-2.1-63.3-14.9-86.2-25.8-62.2-30.1-116.8-72.8-162.1-127-37.3-44.9-62.4-86.7-79-131.5-10.3-27.5-14.2-49.6-12.6-69.7z" data-original="#000000"></path>
+                  </svg>
+                  <a href="tel:+158996888" className="text-sm sm:text-base ml-3 sm:ml-4">
+                    +158 996 888
+                  </a>
+                </li>
 
-              <div>
-                <label htmlFor="phone" className="flex items-center gap-2 text-white font-semibold mb-2 text-sm sm:text-base">
-                  <span className="text-violet-400">📱</span>
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3.5 bg-slate-800/50 border border-violet-500/30 rounded-xl text-white text-sm sm:text-base placeholder-gray-500 focus:outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 transition-all"
-                  placeholder="+91 98765 43210"
-                />
-              </div>
+                {/* Address */}
+                <li className="flex items-center text-gray-300 hover:text-violet-400 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16px" height="16px" viewBox="0 0 368.16 368.16" className="shrink-0">
+                    <path d="M184.08 0c-74.992 0-136 61.008-136 136 0 24.688 11.072 51.24 11.536 52.36 3.576 8.488 10.632 21.672 15.72 29.4l93.248 141.288c3.816 5.792 9.464 9.112 15.496 9.112s11.68-3.32 15.496-9.104l93.256-141.296c5.096-7.728 12.144-20.912 15.72-29.4.464-1.112 11.528-27.664 11.528-52.36 0-74.992-61.008-136-136-136zM293.8 182.152c-3.192 7.608-9.76 19.872-14.328 26.8l-93.256 141.296c-1.84 2.792-2.424 2.792-4.264 0L88.696 208.952c-4.568-6.928-11.136-19.2-14.328-26.808-.136-.328-10.288-24.768-10.288-46.144 0-66.168 53.832-120 120-120s120 53.832 120 120c0 21.408-10.176 45.912-10.28 46.152z" data-original="#000000"></path>
+                    <path d="M184.08 64.008c-39.704 0-72 32.304-72 72s32.296 72 72 72 72-32.304 72-72-32.296-72-72-72zm0 128c-30.872 0-56-25.12-56-56s25.128-56 56-56 56 25.12 56 56-25.128 56-56 56z" data-original="#000000"></path>
+                  </svg>
+                  <span className="text-sm sm:text-base ml-3 sm:ml-4">
+                    123 Street 256 House
+                  </span>
+                </li>
+              </ul>
 
-              <div>
-                <label htmlFor="subject" className="flex items-center gap-2 text-white font-semibold mb-2 text-sm sm:text-base">
-                  <span className="text-violet-400">💼</span>
-                  Subject *
-                </label>
-                <select
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3.5 bg-slate-800/50 border border-violet-500/30 rounded-xl text-white text-sm sm:text-base focus:outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 transition-all [&>option]:text-gray-900 [&>option]:bg-white"
-                >
-                  <option value="" className="text-gray-900 bg-white">Select a subject</option>
-                  <option value="brand-identity" className="text-gray-900 bg-white">Brand Identity Design</option>
-                  <option value="digital-design" className="text-gray-900 bg-white">Digital Design</option>
-                  <option value="photography" className="text-gray-900 bg-white">Photography</option>
-                  <option value="video-production" className="text-gray-900 bg-white">Video Production</option>
-                  <option value="social-media" className="text-gray-900 bg-white">Social Media Marketing</option>
-                  <option value="print-design" className="text-gray-900 bg-white">Print Design</option>
-                  <option value="other" className="text-gray-900 bg-white">Other Inquiry</option>
-                </select>
-              </div>
+              {/* Social Media Icons */}
+              <ul className="flex flex-wrap gap-3 sm:gap-4 lg:gap-5 mt-12 sm:mt-16">
+                <li className="bg-violet-500/20 hover:bg-violet-500/40 h-9 w-9 sm:h-10 sm:w-10 rounded-full flex items-center justify-center shrink-0 transition-colors border border-violet-500/30">
+                  <a href="#" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 sm:w-5 sm:h-5 fill-white" viewBox="0 0 24 24">
+                      <path d="M6.812 13.937H9.33v9.312c0 .414.335.75.75.75l4.007.001a.75.75 0 0 0 .75-.75v-9.312h2.387a.75.75 0 0 0 .744-.657l.498-4a.75.75 0 0 0-.744-.843h-2.885c.113-2.471-.435-3.202 1.172-3.202 1.088-.13 2.804.421 2.804-.75V.909a.75.75 0 0 0-.648-.743A26.926 26.926 0 0 0 15.071 0c-7.01 0-5.567 7.772-5.74 8.437H6.812a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75zm.75-3.999h2.518a.75.75 0 0 0 .75-.75V6.037c0-2.883 1.545-4.536 4.24-4.536.878 0 1.686.043 2.242.087v2.149c-.402.205-3.976-.884-3.976 2.697v2.755c0 .414.336.75.75.75h2.786l-.312 2.5h-2.474a.75.75 0 0 0-.75.75V22.5h-2.505v-9.312a.75.75 0 0 0-.75-.75H7.562z" data-original="#000000" />
+                    </svg>
+                  </a>
+                </li>
+                <li className="bg-violet-500/20 hover:bg-violet-500/40 h-9 w-9 sm:h-10 sm:w-10 rounded-full flex items-center justify-center shrink-0 transition-colors border border-violet-500/30">
+                  <a href="#" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 sm:w-5 sm:h-5 fill-white" viewBox="0 0 511 512">
+                      <path d="M111.898 160.664H15.5c-8.285 0-15 6.719-15 15V497c0 8.285 6.715 15 15 15h96.398c8.286 0 15-6.715 15-15V175.664c0-8.281-6.714-15-15-15zM96.898 482H30.5V190.664h66.398zM63.703 0C28.852 0 .5 28.352.5 63.195c0 34.852 28.352 63.2 63.203 63.2 34.848 0 63.195-28.352 63.195-63.2C126.898 28.352 98.551 0 63.703 0zm0 96.395c-18.308 0-33.203-14.891-33.203-33.2C30.5 44.891 45.395 30 63.703 30c18.305 0 33.195 14.89 33.195 33.195 0 18.309-14.89 33.2-33.195 33.2zm289.207 62.148c-22.8 0-45.273 5.496-65.398 15.777-.684-7.652-7.11-13.656-14.942-13.656h-96.406c-8.281 0-15 6.719-15 15V497c0 8.285 6.719 15 15 15h96.406c8.285 0 15-6.715 15-15V320.266c0-22.735 18.5-41.23 41.235-41.23 22.734 0 41.226 18.495 41.226 41.23V497c0 8.285 6.719 15 15 15h96.403c8.285 0 15-6.715 15-15V302.066c0-79.14-64.383-143.523-143.524-143.523zM466.434 482h-66.399V320.266c0-39.278-31.953-71.23-71.226-71.23-39.282 0-71.239 31.952-71.239 71.23V482h-66.402V190.664h66.402v11.082c0 5.77 3.309 11.027 8.512 13.524a15.01 15.01 0 0 0 15.875-1.82c20.313-16.294 44.852-24.907 70.953-24.907 62.598 0 113.524 50.926 113.524 113.523zm0 0" data-original="#000000" />
+                    </svg>
+                  </a>
+                </li>
+                <li className="bg-violet-500/20 hover:bg-violet-500/40 h-9 w-9 sm:h-10 sm:w-10 rounded-full flex items-center justify-center shrink-0 transition-colors border border-violet-500/30">
+                  <a href="#" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 sm:w-5 sm:h-5 fill-white" viewBox="0 0 24 24">
+                      <path d="M12 9.3a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm0-1.8a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm5.85-.225a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0ZM12 4.8c-2.227 0-2.59.006-3.626.052-.706.034-1.18.128-1.618.299a2.59 2.59 0 0 0-.972.633 2.601 2.601 0 0 0-.634.972c-.17.44-.265.913-.298 1.618C4.805 9.367 4.8 9.714 4.8 12c0 2.227.006 2.59.052 3.626.034.705.128 1.18.298 1.617.153.392.333.674.632.972.303.303.585.484.972.633.445.172.918.267 1.62.3.993.047 1.34.052 3.626.052 2.227 0 2.59-.006 3.626-.052.704-.034 1.178-.128 1.617-.298.39-.152.674-.333.972-.632.304-.303.485-.585.634-.972.171-.444.266-.918.299-1.62.047-.993.052-1.34.052-3.626 0-2.227-.006-2.59-.052-3.626-.034-.704-.128-1.18-.299-1.618a2.619 2.619 0 0 0-.633-.972 2.595 2.595 0 0 0-.972-.634c-.44-.17-.914-.265-1.618-.298-.993-.047-1.34-.052-3.626-.052ZM12 3c2.445 0 2.75.009 3.71.054.958.045 1.61.195 2.185.419A4.388 4.388 0 0 1 19.49 4.51c.457.45.812.994 1.038 1.595.222.573.373 1.227.418 2.185.042.96.054 1.265.054 3.71 0 2.445-.009 2.75-.054 3.71-.045.958-.196 1.61-.419 2.185a4.395 4.395 0 0 1-1.037 1.595 4.44 4.44 0 0 1-1.595 1.038c-.573.222-1.227.373-2.185.418-.96.042-1.265.054-3.71.054-2.445 0-2.75-.009-3.71-.054-.958-.045-1.61-.196-2.185-.419A4.402 4.402 0 0 1 4.51 19.49a4.414 4.414 0 0 1-1.037-1.595c-.224-.573-.374-1.227-.419-2.185C3.012 14.75 3 14.445 3 12c0-2.445.009-2.75.054-3.71s.195-1.61.419-2.185A4.392 4.392 0 0 1 4.51 4.51c.45-.458.994-.812 1.595-1.037.574-.224 1.226-.374 2.185-.419C9.25 3.012 9.555 3 12 3Z"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-              <div>
-                <label htmlFor="message" className="flex items-center gap-2 text-white font-semibold mb-2 text-sm sm:text-base">
-                  <span className="text-violet-400">💬</span>
-                  Message *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="4"
-                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3.5 bg-slate-800/50 border border-violet-500/30 rounded-xl text-white text-sm sm:text-base placeholder-gray-500 focus:outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-500/20 transition-all resize-none"
-                  placeholder="Tell us about your project, timeline, budget, and any specific requirements..."
-                ></textarea>
-              </div>
-
-              <div className="flex items-start gap-2 sm:gap-3 p-3 sm:p-4 bg-violet-500/10 border border-violet-500/20 rounded-xl">
-                <span className="text-xl sm:text-2xl shrink-0">💡</span>
-                <p className="text-xs sm:text-sm text-gray-400">
-                  <span className="text-violet-400 font-semibold">Pro Tip:</span> The more details you provide, the better we can understand your needs and provide an accurate quote!
-                </p>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full py-3 sm:py-4 bg-linear-to-r from-violet-600 via-fuchsia-600 to-indigo-600 rounded-xl font-semibold text-white text-sm sm:text-base hover:shadow-2xl hover:shadow-violet-500/50 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                <span>Send Message</span>
-                <span>🚀</span>
-              </button>
-            </form>
+            {/* Decorative Circle */}
+            <div className="absolute -bottom-16 sm:-bottom-24 -right-16 sm:-right-24 w-40 h-40 sm:w-60 sm:h-60 rounded-full bg-linear-to-br from-violet-600/30 to-fuchsia-600/30 blur-3xl"></div>
           </div>
 
-          {/* Contact Information - Equal 50% width */}
-          <div className="space-y-4 sm:space-y-6">
-            {/* Quick Contact Cards */}
-            <div className="grid grid-cols-1 gap-3 sm:gap-4">
-              <a
-                href="mailto:hello@cloudgraphics.com"
-                className="group bg-slate-900/50 backdrop-blur-xl border border-violet-500/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-violet-500/50 hover:scale-[1.02] transition-all"
+          {/* Contact Form */}
+          <div className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:col-span-3">
+            <form onSubmit={handleSubmit}>
+              <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+                {/* First Name */}
+                <div className="relative flex items-center">
+                  <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    required
+                    className="px-2 py-3 bg-slate-800/50 w-full text-sm text-white border-b border-violet-500/30 focus:border-violet-500 outline-none placeholder-gray-500"
+                  />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="#8b5cf6" stroke="#8b5cf6" className="w-4 h-4 absolute right-2" viewBox="0 0 24 24">
+                    <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
+                    <path d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z" data-original="#000000"></path>
+                  </svg>
+                </div>
+
+                {/* Last Name */}
+                <div className="relative flex items-center">
+                  <input
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    required
+                    className="px-2 py-3 bg-slate-800/50 w-full text-sm text-white border-b border-violet-500/30 focus:border-violet-500 outline-none placeholder-gray-500"
+                  />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="#8b5cf6" stroke="#8b5cf6" className="w-4 h-4 absolute right-2" viewBox="0 0 24 24">
+                    <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
+                    <path d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z" data-original="#000000"></path>
+                  </svg>
+                </div>
+
+                {/* Phone */}
+                <div className="relative flex items-center">
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone No."
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    className="px-2 py-3 bg-slate-800/50 w-full text-sm text-white border-b border-violet-500/30 focus:border-violet-500 outline-none placeholder-gray-500"
+                  />
+                  <svg fill="#8b5cf6" className="w-4 h-4 absolute right-2" viewBox="0 0 64 64">
+                    <path d="m52.148 42.678-6.479-4.527a5 5 0 0 0-6.963 1.238l-1.504 2.156c-2.52-1.69-5.333-4.05-8.014-6.732-2.68-2.68-5.04-5.493-6.73-8.013l2.154-1.504a4.96 4.96 0 0 0 2.064-3.225 4.98 4.98 0 0 0-.826-3.739l-4.525-6.478C20.378 10.5 18.85 9.69 17.24 9.69a4.69 4.69 0 0 0-1.628.291 8.97 8.97 0 0 0-1.685.828l-.895.63a6.782 6.782 0 0 0-.63.563c-1.092 1.09-1.866 2.472-2.303 4.104-1.865 6.99 2.754 17.561 11.495 26.301 7.34 7.34 16.157 11.9 23.011 11.9 1.175 0 2.281-.136 3.29-.406 1.633-.436 3.014-1.21 4.105-2.302.199-.199.388-.407.591-.67l.63-.899a9.007 9.007 0 0 0 .798-1.64c.763-2.06-.007-4.41-1.871-5.713z" data-original="#000000"></path>
+                  </svg>
+                </div>
+
+                {/* Email */}
+                <div className="relative flex items-center">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="px-2 py-3 bg-slate-800/50 w-full text-sm text-white border-b border-violet-500/30 focus:border-violet-500 outline-none placeholder-gray-500"
+                  />
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="#8b5cf6" stroke="#8b5cf6" className="w-4 h-4 absolute right-2" viewBox="0 0 682.667 682.667">
+                    <defs>
+                      <clipPath id="a" clipPathUnits="userSpaceOnUse">
+                        <path d="M0 512h512V0H0Z" data-original="#000000"></path>
+                      </clipPath>
+                    </defs>
+                    <g clipPath="url(#a)" transform="matrix(1.33 0 0 -1.33 0 682.667)">
+                      <path fill="none" strokeMiterlimit="10" strokeWidth="40" d="M452 444H60c-22.091 0-40-17.909-40-40v-39.446l212.127-157.782c14.17-10.54 33.576-10.54 47.746 0L492 364.554V404c0 22.091-17.909 40-40 40Z" data-original="#000000"></path>
+                      <path d="M472 274.9V107.999c0-11.027-8.972-20-20-20H60c-11.028 0-20 8.973-20 20V274.9L0 304.652V107.999c0-33.084 26.916-60 60-60h392c33.084 0 60 26.916 60 60v196.653Z" data-original="#000000"></path>
+                    </g>
+                  </svg>
+                </div>
+
+                {/* Message */}
+                <div className="relative flex items-center col-span-full">
+                  <textarea
+                    name="message"
+                    placeholder="Write Message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows="4"
+                    className="px-2 pt-3 bg-slate-800/50 w-full text-sm text-white border-b border-violet-500/30 focus:border-violet-500 outline-none resize-none placeholder-gray-500"
+                  ></textarea>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="#8b5cf6" stroke="#8b5cf6" className="w-4 h-4 absolute right-2 top-3" viewBox="0 0 682.667 682.667">
+                    <defs>
+                      <clipPath id="b" clipPathUnits="userSpaceOnUse">
+                        <path d="M0 512h512V0H0Z" data-original="#000000"></path>
+                      </clipPath>
+                    </defs>
+                    <g clipPath="url(#b)" transform="matrix(1.33 0 0 -1.33 0 682.667)">
+                      <path fill="none" strokeMiterlimit="10" strokeWidth="40" d="M452 444H60c-22.091 0-40-17.909-40-40v-39.446l212.127-157.782c14.17-10.54 33.576-10.54 47.746 0L492 364.554V404c0 22.091-17.909 40-40 40Z" data-original="#000000"></path>
+                      <path d="M472 274.9V107.999c0-11.027-8.972-20-20-20H60c-11.028 0-20 8.973-20 20V274.9L0 304.652V107.999c0-33.084 26.916-60 60-60h392c33.084 0 60 26.916 60 60v196.653Z" data-original="#000000"></path>
+                    </g>
+                  </svg>
+                </div>
+
+                {/* Subject Selection */}
+                <div className="col-span-full">
+                  <h6 className="text-sm sm:text-base text-white font-medium">Select Subject</h6>
+                  <div className="flex flex-wrap gap-4 sm:gap-6 mt-3 sm:mt-4">
+                    <div className="flex items-center">
+                      <input
+                        id="radio1"
+                        type="radio"
+                        name="subject"
+                        value="general"
+                        checked={formData.subject === 'general'}
+                        onChange={handleChange}
+                        className="hidden peer"
+                      />
+                      <label
+                        htmlFor="radio1"
+                        className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-slate-800 w-5 h-5 cursor-pointer border-2 border-violet-500 rounded-full overflow-hidden"
+                      >
+                        <span className="border-4 border-violet-500 rounded-full w-full h-full"></span>
+                      </label>
+                      <p className="text-xs sm:text-sm text-gray-300 ml-2 sm:ml-3">General Inquiry</p>
+                    </div>
+                    <div className="flex items-center">
+                      <input
+                        id="radio2"
+                        type="radio"
+                        name="subject"
+                        value="support"
+                        checked={formData.subject === 'support'}
+                        onChange={handleChange}
+                        className="hidden peer"
+                      />
+                      <label
+                        htmlFor="radio2"
+                        className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-slate-800 w-5 h-5 cursor-pointer border-2 border-violet-500 rounded-full overflow-hidden"
+                      >
+                        <span className="border-4 border-violet-500 rounded-full w-full h-full"></span>
+                      </label>
+                      <p className="text-xs sm:text-sm text-gray-300 ml-2 sm:ml-3">Technical Support</p>
+                    </div>
+                    <div className="flex items-center">
+                      <input
+                        id="radio3"
+                        type="radio"
+                        name="subject"
+                        value="feedback"
+                        checked={formData.subject === 'feedback'}
+                        onChange={handleChange}
+                        className="hidden peer"
+                      />
+                      <label
+                        htmlFor="radio3"
+                        className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-slate-800 w-5 h-5 cursor-pointer border-2 border-violet-500 rounded-full overflow-hidden"
+                      >
+                        <span className="border-4 border-violet-500 rounded-full w-full h-full"></span>
+                      </label>
+                      <p className="text-xs sm:text-sm text-gray-300 ml-2 sm:ml-3">Website Feedback</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="mt-8 sm:mt-12 flex items-center justify-center text-sm font-medium lg:ml-auto max-lg:w-full rounded-lg px-6 py-3 tracking-wide cursor-pointer text-white bg-linear-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 transition-all shadow-lg shadow-violet-500/50 hover:shadow-xl hover:shadow-violet-500/60"
               >
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-violet-500 to-fuchsia-500 rounded-xl sm:rounded-2xl flex items-center justify-center text-xl sm:text-2xl shrink-0 group-hover:scale-110 transition-transform">
-                    📧
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-white font-bold mb-1 text-sm sm:text-base group-hover:text-violet-400 transition-colors">Email Us</h3>
-                    <p className="text-gray-400 text-xs sm:text-sm truncate">hello@cloudgraphics.com</p>
-                  </div>
-                  <div className="text-violet-400 group-hover:translate-x-1 transition-transform text-sm sm:text-base">→</div>
-                </div>
-              </a>
-
-              <a
-                href="tel:+919876543210"
-                className="group bg-slate-900/50 backdrop-blur-xl border border-fuchsia-500/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 hover:border-fuchsia-500/50 hover:scale-[1.02] transition-all"
-              >
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-fuchsia-500 to-pink-500 rounded-xl sm:rounded-2xl flex items-center justify-center text-xl sm:text-2xl shrink-0 group-hover:scale-110 transition-transform">
-                    📱
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-white font-bold mb-1 text-sm sm:text-base group-hover:text-fuchsia-400 transition-colors">Call Us</h3>
-                    <p className="text-gray-400 text-xs sm:text-sm">+91 98765 43210</p>
-                  </div>
-                  <div className="text-fuchsia-400 group-hover:translate-x-1 transition-transform text-sm sm:text-base">→</div>
-                </div>
-              </a>
-
-              <div className="bg-slate-900/50 backdrop-blur-xl border border-indigo-500/20 rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-indigo-500 to-violet-500 rounded-xl sm:rounded-2xl flex items-center justify-center text-xl sm:text-2xl shrink-0">
-                    📍
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-white font-bold mb-1 text-sm sm:text-base">Visit Us</h3>
-                    <p className="text-gray-400 text-xs sm:text-sm">Amravati, Maharashtra, India</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-slate-900/50 backdrop-blur-xl border border-pink-500/20 rounded-xl sm:rounded-2xl p-4 sm:p-6">
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-linear-to-br from-pink-500 to-rose-500 rounded-xl sm:rounded-2xl flex items-center justify-center text-xl sm:text-2xl shrink-0">
-                    ⏰
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-white font-bold mb-1 text-sm sm:text-base">Working Hours</h3>
-                    <p className="text-gray-400 text-xs sm:text-sm">Mon - Sat: 10 AM - 7 PM</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Media */}
-            <div className="bg-slate-900/50 backdrop-blur-xl border border-violet-500/20 rounded-xl sm:rounded-2xl p-4 sm:p-6">
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 flex items-center gap-2">
-                <span className="bg-linear-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-                  Connect With Us
-                </span>
-                <span>🌟</span>
-              </h3>
-              <div className="flex gap-2 sm:gap-3">
-                <a
-                  href="#"
-                  className="w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-violet-500 to-fuchsia-500 rounded-lg sm:rounded-xl flex items-center justify-center hover:scale-110 hover:-rotate-6 transition-all duration-300 shadow-lg hover:shadow-violet-500/50"
-                  aria-label="Facebook"
-                >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-pink-500 to-rose-500 rounded-lg sm:rounded-xl flex items-center justify-center hover:scale-110 hover:rotate-6 transition-all duration-300 shadow-lg hover:shadow-pink-500/50"
-                  aria-label="Instagram"
-                >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-blue-400 to-cyan-500 rounded-lg sm:rounded-xl flex items-center justify-center hover:scale-110 hover:-rotate-6 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
-                  aria-label="Twitter"
-                >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-indigo-500 to-purple-600 rounded-lg sm:rounded-xl flex items-center justify-center hover:scale-110 hover:rotate-6 transition-all duration-300 shadow-lg hover:shadow-indigo-500/50"
-                  aria-label="LinkedIn"
-                >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            {/* Quick Response Badge */}
-            <div className="relative overflow-hidden bg-slate-900/50 backdrop-blur-xl border border-violet-500/20 rounded-xl sm:rounded-2xl p-4 sm:p-6">
-              <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-linear-to-br from-violet-600/20 to-fuchsia-600/20 rounded-full blur-3xl"></div>
-              <div className="relative text-center">
-                <div className="text-4xl sm:text-5xl mb-2 sm:mb-3">⚡</div>
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Quick Response Guarantee</h3>
-                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">
-                  We respond within <span className="text-violet-400 font-bold">24 hours</span> on business days
-                </p>
-              </div>
-            </div>
-
-            {/* Why Choose Us */}
-            <div className="bg-slate-900/50 backdrop-blur-xl border border-violet-500/20 rounded-xl sm:rounded-2xl p-4 sm:p-6">
-              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 flex items-center gap-2">
-                <span className="bg-linear-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-                  Why Work With Us?
-                </span>
-                <span>✨</span>
-              </h3>
-              <div className="space-y-2 sm:space-y-3">
-                {[
-                  { icon: '🎨', text: 'Creative Excellence' },
-                  { icon: '⚡', text: 'Fast Turnaround' },
-                  { icon: '💎', text: 'Premium Quality' },
-                  { icon: '🤝', text: 'Client Satisfaction' }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center gap-2 sm:gap-3 text-gray-400 hover:text-white transition-colors">
-                    <span className="text-lg sm:text-xl">{item.icon}</span>
-                    <span className="text-xs sm:text-sm">{item.text}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="#fff" className="mr-2" viewBox="0 0 548.244 548.244">
+                  <path fillRule="evenodd" d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z" clipRule="evenodd" data-original="#000000" />
+                </svg>
+                Send Message
+              </button>
+            </form>
           </div>
         </div>
       </div>
