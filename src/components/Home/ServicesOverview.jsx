@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 const ServicesOverview = () => {
   const navigate = useNavigate();
   return (
-    <section id="services" className="relative bg-linear-to-b from-indigo-950 via-slate-900 to-violet-950 py-16 sm:py-24 md:py-32 overflow-hidden">
+      <section id="services" className="relative bg-linear-to-b from-indigo-950 via-slate-900 to-violet-950 py-12 sm:py-16 md:py-24 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Large Gradient Orbs */}
@@ -67,7 +67,7 @@ const ServicesOverview = () => {
         </div>
 
         {/* Enhanced Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-4 sm:mb-6">
           {servicesData.slice(0, 3).map((service, index) => (
             <div 
               key={index}

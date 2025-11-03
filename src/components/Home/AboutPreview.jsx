@@ -34,7 +34,7 @@ const AboutPreview = () => {
             {/* Main Image Card (responsive) */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl sm:hover:scale-105 transition-transform duration-500 w-full sm:max-w-sm mx-auto">
               <div className="w-full bg-linear-to-br from-violet-600 via-fuchsia-600 to-indigo-600 p-1">
-                <div className="bg-slate-900 rounded-3xl p-8 sm:p-10 flex items-center justify-center min-h-[400px] sm:min-h-[450px]">
+                <div className="bg-slate-900 rounded-3xl p-6 sm:p-8 flex items-center justify-center min-h-[300px] sm:min-h-[350px]">
                   <div className="text-center space-y-5">
                     <div className="relative inline-block">
                       <div className="absolute inset-0 bg-violet-500 blur-2xl opacity-50 animate-pulse"></div>

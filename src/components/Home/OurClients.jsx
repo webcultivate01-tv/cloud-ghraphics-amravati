@@ -45,7 +45,7 @@ const OurClients = () => {
   ]
 
   return (
-    <section className="relative py-24 sm:py-32 overflow-hidden">
+    <section className="relative py-12 sm:py-16 overflow-hidden">
       {/* Background Image with Parallax */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-fixed"
@@ -59,7 +59,7 @@ const OurClients = () => {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section Header */}
-        <div className="text-center mb-16 sm:mb-20">
+  <div className="text-center mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-md rounded-full border border-violet-400/30 mb-6 sm:mb-8 animate-fade-in-up">
             <span className="text-2xl sm:text-3xl">🤝</span>
             <span className="text-violet-300 font-semibold text-sm sm:text-base">Trusted Partners</span>
