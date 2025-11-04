@@ -1,17 +1,22 @@
-# 🎨 Cloud Graphics - Bussiness Website
+# 🎨 Cloud Graphics - Business Website
 
-A modern, stunning portfolio website for Cloud Graphics - a creative design studio specializing in brand identity, digital design, photography, and video production. Built with cutting-edge web technologies and featuring premium animations, glass-morphism effects, and a fully responsive design.
+A modern, stunning portfolio website for Cloud Graphics - a creative design studio specializing in brand identity, digital design, photography, and video production. Built with cutting-edge web technologies and featuring premium animations, glass-morphism effects, interactive galleries, and a fully responsive design.
 
 ## ✨ Features
 
-- 🎭 **Automated Background Slider** - 3 rotating background images with smooth transitions
-- 🌟 **Advanced Visual Effects** - Ken Burns zoom, floating particles, scan lines, gradient overlays
+- 🎭 **Animated Gradient Backgrounds** - Dynamic gradient blobs with pulse animations
+- 🖼️ **Interactive Image Gallery** - Clickable thumbnail gallery with featured image display
+- 🌟 **Advanced Visual Effects** - Grid patterns, gradient overlays, backdrop blur effects
 - 💎 **Glass-morphism Design** - Modern frosted glass UI components with backdrop blur
-- 🎨 **Premium Animations** - Custom CSS animations (float, twinkle, scan, color-shift, blob)
+- 🎨 **Premium Animations** - Custom CSS animations (pulse-slow, float, gradient transitions)
 - 📱 **Fully Responsive** - Mobile-first design with hamburger menu and adaptive layouts
-- 🗺️ **Interactive Google Maps** - Embedded studio location with attractive overlay
+- 🎯 **Masonry Grid Layout** - Beautiful responsive image grid for portfolio showcase
+- � **Interactive Contact Forms** - Modern dark-themed forms with social media integration
+- 🏢 **Industry Showcase** - Background image sections with optimized overlays
 - ⚡ **Lightning Fast** - Built with Vite for optimal performance
+- 💬 **Customer Testimonials** - Dedicated testimonial section with animated backgrounds
 - 🎯 **SEO Optimized** - Semantic HTML and proper meta tags
+- 🎨 **Custom Cursor** - Interactive custom cursor throughout the site
 
 ## 🛠️ Technologies Used
 
@@ -44,11 +49,19 @@ A modern, stunning portfolio website for Cloud Graphics - a creative design stud
 ```
 cloud-graphics-amravati/
 ├── public/
-│   ├── bg_img/              # Background images (bg1.jpg, bg2.jpg, bg3.jpg)
+│   ├── bg_img/              # Background images (bg1-bg6.jpg)
+│   ├── Logo/                # Logo assets
 │   └── vite.svg
 ├── src/
 │   ├── assets/              # Static assets (images, icons, etc.)
 │   ├── components/
+│   │   ├── About/           # About page components
+│   │   │   ├── CallToAction.jsx
+│   │   │   ├── CoreValues.jsx
+│   │   │   ├── HeroSection.jsx
+│   │   │   ├── OurStory.jsx
+│   │   │   ├── Team.jsx
+│   │   │   └── Timeline.jsx
 │   │   ├── common/          # Reusable components
 │   │   │   ├── Button.jsx
 │   │   │   ├── ClientCard.jsx
@@ -56,17 +69,39 @@ cloud-graphics-amravati/
 │   │   │   ├── ServiceCard.jsx
 │   │   │   ├── StatCard.jsx
 │   │   │   └── TestimonialCard.jsx
+│   │   ├── Contact/         # Contact page components
+│   │   │   ├── ContactFormSection.jsx
+│   │   │   ├── FAQ.jsx
+│   │   │   └── HeroSection.jsx
 │   │   ├── Home/            # Home page components
 │   │   │   ├── AboutPreview.jsx
 │   │   │   ├── CallToAction.jsx
 │   │   │   ├── Contact.jsx
 │   │   │   ├── HeroSection.jsx
+│   │   │   ├── OurClients.jsx
 │   │   │   ├── ServicesOverview.jsx
+│   │   │   ├── Testimonials.jsx
 │   │   │   └── WorkProcess.jsx
-│   │   └── Layout/          # Layout components
-│   │       ├── Footer.jsx
-│   │       ├── Layout.jsx
-│   │       └── Navbar.jsx
+│   │   ├── Layout/          # Layout components
+│   │   │   ├── CallButton.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── InstagramButton.jsx
+│   │   │   ├── Layout.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   └── WhatsAppButton.jsx
+│   │   ├── OurWork/         # Our Work page components
+│   │   │   ├── Awards.jsx
+│   │   │   ├── CallToAction.jsx
+│   │   │   ├── CreativeProcess.jsx
+│   │   │   ├── HeroSection.jsx (Interactive Gallery)
+│   │   │   ├── Industries.jsx (With bg6 background)
+│   │   │   └── PortfolioGrid.jsx (Masonry Layout)
+│   │   ├── Services/        # Services page components
+│   │   │   ├── CallToAction.jsx
+│   │   │   ├── HeroSection.jsx
+│   │   │   ├── PricingSection.jsx
+│   │   │   └── ServicesGrid.jsx
+│   │   └── CustomCursor.jsx # Custom cursor component
 │   ├── data/
 │   │   └── servicesData.js  # Service offerings data
 │   ├── pages/               # Page components
@@ -75,7 +110,6 @@ cloud-graphics-amravati/
 │   │   ├── Home.jsx
 │   │   ├── OurWork.jsx
 │   │   └── Services.jsx
-│   ├── App.css              # Application styles
 │   ├── App.jsx              # Root component with routing
 │   ├── index.css            # Global styles & custom animations
 │   └── main.jsx             # Application entry point
@@ -97,6 +131,7 @@ cloud-graphics-amravati/
 - **Background**: Slate (900-950)
 
 ### Custom Animations
+- `pulse-slow` - Slow pulsing animation for gradient blobs
 - `float` / `float-slow` / `float-fast` - Multi-speed floating effects
 - `twinkle` - Sparkle opacity pulse (3s)
 - `scan` / `scan-slow` - Vertical light beam effects
@@ -104,6 +139,8 @@ cloud-graphics-amravati/
 - `fade-in-up` - Entry animation (0.6s)
 - `blob` - Morphing transformation (7s)
 - `gradient` - Background position shift (3s)
+- `hover:scale-110` - Interactive hover transformations
+- `hover:-translate-y-2` - Lift effect on hover
 
 ### Responsive Breakpoints
 - **Mobile**: < 640px
@@ -148,9 +185,11 @@ Make sure you have the following installed:
 3. **Add background images**
    
    Place your background images in the `public/bg_img/` directory:
-   - `bg1.jpg`
-   - `bg2.jpg`
-   - `bg3.jpg`
+   - `bg1.jpg` - `bg6.jpg` (6 background images)
+   
+4. **Add logo files**
+   
+   Place your logo files in the `public/Logo/` directory
 
 ### Development
 
@@ -199,32 +238,56 @@ npm run lint
 
 ## 🎯 Key Components
 
-### HeroSection
-- Automated background image slider (5-second intervals)
-- Ken Burns zoom effect (12s animation)
-- Multi-layered visual effects (particles, gradients, vignette)
-- Responsive stat cards and category cards
+### Home Page
+- **HeroSection**: Animated gradient backgrounds with service categories
+- **ServicesOverview**: Glass-morphism service cards with hover effects
+- **OurClients**: Client showcase section
+- **AboutPreview**: Company introduction preview
+- **WorkProcess**: Step-by-step process explanation
+- **Testimonials**: Customer reviews with animated gradient background
+- **CallToAction**: Conversion-focused CTA section
 
-### Navbar
-- Fixed position with scroll detection
-- Hamburger menu for mobile devices
-- Full-screen mobile overlay menu
-- Smooth transitions and backdrop blur
+### About Page
+- **HeroSection**: Company introduction with visual effects
+- **OurStory**: Brand story and mission
+- **CoreValues**: Company values showcase
+- **Timeline**: Company milestone timeline
+- **CallToAction**: About-specific CTA
 
-### ServicesOverview
-- Glass-morphism service cards
-- Animated section headers with badges
-- Premium CTA section with stats
-- Trust indicators with checkmarks
-- Responsive grid layout (1→2→3 columns)
+### Services Page
+- **HeroSection**: Animated gradient blobs with 6-card service grid
+- **ServicesGrid**: Detailed service offerings
+- **PricingSection**: Pricing tiers and packages
+- **CallToAction**: Service-specific CTA
 
-### Footer
-- 4-column responsive grid layout
-- Interactive Google Maps integration
-- Animated gradient borders
-- Social media links with SVG icons
-- Contact information with hover effects
-- Glass-morphism overlay card on map
+### Our Work Page
+- **HeroSection**: Interactive thumbnail gallery with featured image display
+- **PortfolioGrid**: Masonry layout image grid (responsive columns)
+- **Industries**: Industry showcase with bg6 background image (70% overlay)
+- **CreativeProcess**: Design process explanation
+- **Awards**: Recognition and achievements
+- **CallToAction**: Portfolio-specific CTA
+
+### Contact Page
+- **HeroSection**: 6-card contact methods grid with animated gradients
+- **ContactFormSection**: Dark-themed form with sidebar and social links
+- **FAQ**: Frequently asked questions
+
+### Layout Components
+- **Navbar**: Fixed navigation with scroll detection and mobile menu
+- **Footer**: Multi-column footer with social links
+- **CallButton**: Floating call action button
+- **WhatsAppButton**: Floating WhatsApp chat button
+- **InstagramButton**: Floating Instagram link button
+- **CustomCursor**: Interactive custom cursor
+
+### Common Components
+- **Button**: Reusable button component
+- **ClientCard**: Client logo display card
+- **SectionHeader**: Consistent section headers
+- **ServiceCard**: Service offering cards
+- **StatCard**: Statistics display cards
+- **TestimonialCard**: Customer testimonial cards
 
 ## 🌐 Browser Support
 
@@ -243,7 +306,40 @@ The project uses Vite with React plugin and Tailwind CSS integration. See `vite.
 Custom ESLint rules for React and modern JavaScript. See `eslint.config.js` for configuration.
 
 ### Tailwind CSS
-Using Tailwind CSS v4 with custom gradients (`bg-linear-to-*` syntax) and extended color palette.
+Using Tailwind CSS v4 with custom gradients (`bg-linear-to-*` syntax), extended color palette, and responsive utilities.
+
+## 🎨 Special Features
+
+### Interactive Gallery (Our Work Hero)
+- Click-to-change featured image
+- Thumbnail grid with active state indicators
+- Smooth image transitions
+- Responsive aspect ratios
+
+### Masonry Grid (Portfolio)
+- CSS columns-based layout
+- Responsive breakpoints (2→3→4 columns)
+- Auto-height image adaptation
+- Smooth hover effects
+
+### Dark Theme Contact Form
+- Bottom-border-only inputs
+- Custom radio buttons with peer-checked states
+- Violet-themed icons and accents
+- Social media integration
+- Glass-morphism card design
+
+### Animated Backgrounds
+- Three-layer gradient blob animations
+- SVG grid pattern overlays
+- Customizable animation delays
+- Backdrop blur effects
+
+### Industry Showcase
+- Background image with optimized overlay (70% opacity)
+- Ensures readability while showing background
+- Hover effects on industry cards
+- Responsive grid layout
 
 ## 🤝 Contributing
 

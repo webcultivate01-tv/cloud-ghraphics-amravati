@@ -107,11 +107,11 @@ const ContactFormSection = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:col-span-3">
+          <div className="w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:col-span-3">
             <form onSubmit={handleSubmit}>
-              <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 {/* First Name */}
-                <div className="relative flex items-center">
+                <div className="relative flex items-center w-full">
                   <input
                     type="text"
                     name="firstName"
@@ -128,7 +128,7 @@ const ContactFormSection = () => {
                 </div>
 
                 {/* Last Name */}
-                <div className="relative flex items-center">
+                <div className="relative flex items-center w-full">
                   <input
                     type="text"
                     name="lastName"
@@ -145,7 +145,7 @@ const ContactFormSection = () => {
                 </div>
 
                 {/* Phone */}
-                <div className="relative flex items-center">
+                <div className="relative flex items-center w-full">
                   <input
                     type="tel"
                     name="phone"
@@ -161,7 +161,7 @@ const ContactFormSection = () => {
                 </div>
 
                 {/* Email */}
-                <div className="relative flex items-center">
+                <div className="relative flex items-center w-full">
                   <input
                     type="email"
                     name="email"
@@ -185,7 +185,7 @@ const ContactFormSection = () => {
                 </div>
 
                 {/* Message */}
-                <div className="relative flex items-center col-span-full">
+                <div className="relative flex items-center col-span-full w-full">
                   <textarea
                     name="message"
                     placeholder="Write Message"

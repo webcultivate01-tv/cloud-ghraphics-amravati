@@ -13,8 +13,16 @@ const Industries = () => {
   ]
 
   return (
-    <section className="py-20 px-6 lg:px-12">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative py-20 px-6 lg:px-12 overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/bg_img/bg6.jpg')" }}
+      />
+      {/* Overlay - Reduced opacity for more visible background */}
+      <div className="absolute inset-0 bg-slate-950/70" />
+      
+      <div className="relative max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">

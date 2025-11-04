@@ -28,7 +28,7 @@ const Footer = () => {
               <img
                 src={cloudlogo}
                 alt="Cloud Graphics Logo"
-                className="h-[80px] w-[80px] sm:h-[100px] sm:w-[100px] md:h-[110px] md:w-[110px] lg:h-[130px] lg:w-[130px]
+                className="h-20 w-20 sm:h-[100px] sm:w-[100px] md:h-[110px] md:w-[110px] lg:h-[130px] lg:w-[130px]
                            hover:scale-110 transition-transform duration-300 rounded-2xl object-contain"
               />
             </div>
@@ -126,7 +126,7 @@ const Footer = () => {
                 >
                   <div className="w-10 h-10 bg-slate-800/50 backdrop-blur-xl border border-indigo-500/20 
                                   rounded-lg flex items-center justify-center group-hover:border-indigo-500/50 
-                                  group-hover:scale-110 transition-all flex-shrink-0">
+                                  group-hover:scale-110 transition-all shrink-0">
                     <FaMapMarkerAlt className="text-lg" />
                   </div>
                   <div className="flex-1 text-left max-w-[250px]">
@@ -146,7 +146,7 @@ const Footer = () => {
                 >
                   <div className="w-10 h-10 bg-slate-800/50 backdrop-blur-xl border border-violet-500/20 
                                   rounded-lg flex items-center justify-center group-hover:border-violet-500/50 
-                                  group-hover:scale-110 transition-all flex-shrink-0">
+                                  group-hover:scale-110 transition-all shrink-0">
                     <FaEnvelope className="text-lg" />
                   </div>
                   <div className="flex-1 text-left max-w-[250px]">
@@ -164,7 +164,7 @@ const Footer = () => {
                 >
                   <div className="w-10 h-10 bg-slate-800/50 backdrop-blur-xl border border-fuchsia-500/20 
                                   rounded-lg flex items-center justify-center group-hover:border-fuchsia-500/50 
-                                  group-hover:scale-110 transition-all flex-shrink-0">
+                                  group-hover:scale-110 transition-all shrink-0">
                     <FaMobileAlt className="text-lg" />
                   </div>
                   <div className="flex-1 text-left max-w-[250px]">
