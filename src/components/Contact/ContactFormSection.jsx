@@ -35,15 +35,16 @@ const ContactFormSection = () => {
         </div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-5 items-start p-4 sm:p-6 bg-slate-900/30 border border-violet-500/10 rounded-xl mt-8 sm:mt-12">
+        <div className="grid lg:grid-cols-5 items-stretch gap-6 p-4 sm:p-6">
           {/* Contact Information Sidebar */}
-          <div className="lg:col-span-2 bg-linear-to-br from-violet-600/20 to-fuchsia-600/20 rounded-xl p-4 sm:p-6 h-full max-lg:order-1 relative overflow-hidden max-lg:mt-8 lg:mt-0 border border-violet-500/30">
-            <h3 className="text-xl sm:text-2xl text-white font-medium">Contact Information</h3>
-            <p className="text-sm sm:text-base text-gray-300 leading-relaxed mt-3 sm:mt-4">Have some big idea or brand to develop and need help?</p>
-            
-            {/* Contact Details */}
-            <div className="mt-12 sm:mt-16 relative z-50">
-              <ul className="space-y-6 sm:space-y-8">
+          <div className="lg:col-span-2 bg-linear-to-br from-violet-600/20 to-fuchsia-600/20 rounded-xl p-3 sm:p-4 lg:p-6 flex flex-col justify-center max-lg:order-1 relative overflow-hidden max-lg:mt-8 lg:mt-0 border border-violet-500/30">
+            <div className="relative z-50">
+              <h3 className="text-lg sm:text-xl lg:text-2xl text-white font-medium">Contact Information</h3>
+              <p className="text-xs sm:text-sm lg:text-base text-gray-300 leading-relaxed mt-2 sm:mt-3 lg:mt-4">Have some big idea or brand to develop and need help?</p>
+              
+              {/* Contact Details */}
+              <div className="mt-4 sm:mt-6 lg:mt-10">
+                <ul className="space-y-3 sm:space-y-4 lg:space-y-6">
                 {/* Email */}
                 <li className="flex items-center text-gray-300 hover:text-violet-400 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="16px" height="16px" viewBox="0 0 479.058 479.058" className="shrink-0">
@@ -77,29 +78,30 @@ const ContactFormSection = () => {
               </ul>
 
               {/* Social Media Icons */}
-              <ul className="flex flex-wrap gap-3 sm:gap-4 lg:gap-5 mt-12 sm:mt-16">
-                <li className="bg-violet-500/20 hover:bg-violet-500/40 h-9 w-9 sm:h-10 sm:w-10 rounded-full flex items-center justify-center shrink-0 transition-colors border border-violet-500/30">
+              <ul className="flex flex-wrap gap-2 sm:gap-3 lg:gap-4 mt-4 sm:mt-6 lg:mt-10">
+                <li className="bg-violet-500/20 hover:bg-violet-500/40 h-8 w-8 sm:h-9 sm:w-9 lg:h-10 lg:w-10 rounded-full flex items-center justify-center shrink-0 transition-colors border border-violet-500/30">
                   <a href="#" aria-label="Facebook">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 sm:w-5 sm:h-5 fill-white" viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 fill-white" viewBox="0 0 24 24">
                       <path d="M6.812 13.937H9.33v9.312c0 .414.335.75.75.75l4.007.001a.75.75 0 0 0 .75-.75v-9.312h2.387a.75.75 0 0 0 .744-.657l.498-4a.75.75 0 0 0-.744-.843h-2.885c.113-2.471-.435-3.202 1.172-3.202 1.088-.13 2.804.421 2.804-.75V.909a.75.75 0 0 0-.648-.743A26.926 26.926 0 0 0 15.071 0c-7.01 0-5.567 7.772-5.74 8.437H6.812a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75zm.75-3.999h2.518a.75.75 0 0 0 .75-.75V6.037c0-2.883 1.545-4.536 4.24-4.536.878 0 1.686.043 2.242.087v2.149c-.402.205-3.976-.884-3.976 2.697v2.755c0 .414.336.75.75.75h2.786l-.312 2.5h-2.474a.75.75 0 0 0-.75.75V22.5h-2.505v-9.312a.75.75 0 0 0-.75-.75H7.562z" data-original="#000000" />
                     </svg>
                   </a>
                 </li>
-                <li className="bg-violet-500/20 hover:bg-violet-500/40 h-9 w-9 sm:h-10 sm:w-10 rounded-full flex items-center justify-center shrink-0 transition-colors border border-violet-500/30">
+                <li className="bg-violet-500/20 hover:bg-violet-500/40 h-8 w-8 sm:h-9 sm:w-9 lg:h-10 lg:w-10 rounded-full flex items-center justify-center shrink-0 transition-colors border border-violet-500/30">
                   <a href="#" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 sm:w-5 sm:h-5 fill-white" viewBox="0 0 511 512">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 fill-white" viewBox="0 0 511 512">
                       <path d="M111.898 160.664H15.5c-8.285 0-15 6.719-15 15V497c0 8.285 6.715 15 15 15h96.398c8.286 0 15-6.715 15-15V175.664c0-8.281-6.714-15-15-15zM96.898 482H30.5V190.664h66.398zM63.703 0C28.852 0 .5 28.352.5 63.195c0 34.852 28.352 63.2 63.203 63.2 34.848 0 63.195-28.352 63.195-63.2C126.898 28.352 98.551 0 63.703 0zm0 96.395c-18.308 0-33.203-14.891-33.203-33.2C30.5 44.891 45.395 30 63.703 30c18.305 0 33.195 14.89 33.195 33.195 0 18.309-14.89 33.2-33.195 33.2zm289.207 62.148c-22.8 0-45.273 5.496-65.398 15.777-.684-7.652-7.11-13.656-14.942-13.656h-96.406c-8.281 0-15 6.719-15 15V497c0 8.285 6.719 15 15 15h96.406c8.285 0 15-6.715 15-15V320.266c0-22.735 18.5-41.23 41.235-41.23 22.734 0 41.226 18.495 41.226 41.23V497c0 8.285 6.719 15 15 15h96.403c8.285 0 15-6.715 15-15V302.066c0-79.14-64.383-143.523-143.524-143.523zM466.434 482h-66.399V320.266c0-39.278-31.953-71.23-71.226-71.23-39.282 0-71.239 31.952-71.239 71.23V482h-66.402V190.664h66.402v11.082c0 5.77 3.309 11.027 8.512 13.524a15.01 15.01 0 0 0 15.875-1.82c20.313-16.294 44.852-24.907 70.953-24.907 62.598 0 113.524 50.926 113.524 113.523zm0 0" data-original="#000000" />
                     </svg>
                   </a>
                 </li>
-                <li className="bg-violet-500/20 hover:bg-violet-500/40 h-9 w-9 sm:h-10 sm:w-10 rounded-full flex items-center justify-center shrink-0 transition-colors border border-violet-500/30">
+                <li className="bg-violet-500/20 hover:bg-violet-500/40 h-8 w-8 sm:h-9 sm:w-9 lg:h-10 lg:w-10 rounded-full flex items-center justify-center shrink-0 transition-colors border border-violet-500/30">
                   <a href="#" aria-label="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 sm:w-5 sm:h-5 fill-white" viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 fill-white" viewBox="0 0 24 24">
                       <path d="M12 9.3a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm0-1.8a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm5.85-.225a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0ZM12 4.8c-2.227 0-2.59.006-3.626.052-.706.034-1.18.128-1.618.299a2.59 2.59 0 0 0-.972.633 2.601 2.601 0 0 0-.634.972c-.17.44-.265.913-.298 1.618C4.805 9.367 4.8 9.714 4.8 12c0 2.227.006 2.59.052 3.626.034.705.128 1.18.298 1.617.153.392.333.674.632.972.303.303.585.484.972.633.445.172.918.267 1.62.3.993.047 1.34.052 3.626.052 2.227 0 2.59-.006 3.626-.052.704-.034 1.178-.128 1.617-.298.39-.152.674-.333.972-.632.304-.303.485-.585.634-.972.171-.444.266-.918.299-1.62.047-.993.052-1.34.052-3.626 0-2.227-.006-2.59-.052-3.626-.034-.704-.128-1.18-.299-1.618a2.619 2.619 0 0 0-.633-.972 2.595 2.595 0 0 0-.972-.634c-.44-.17-.914-.265-1.618-.298-.993-.047-1.34-.052-3.626-.052ZM12 3c2.445 0 2.75.009 3.71.054.958.045 1.61.195 2.185.419A4.388 4.388 0 0 1 19.49 4.51c.457.45.812.994 1.038 1.595.222.573.373 1.227.418 2.185.042.96.054 1.265.054 3.71 0 2.445-.009 2.75-.054 3.71-.045.958-.196 1.61-.419 2.185a4.395 4.395 0 0 1-1.037 1.595 4.44 4.44 0 0 1-1.595 1.038c-.573.222-1.227.373-2.185.418-.96.042-1.265.054-3.71.054-2.445 0-2.75-.009-3.71-.054-.958-.045-1.61-.196-2.185-.419A4.402 4.402 0 0 1 4.51 19.49a4.414 4.414 0 0 1-1.037-1.595c-.224-.573-.374-1.227-.419-2.185C3.012 14.75 3 14.445 3 12c0-2.445.009-2.75.054-3.71s.195-1.61.419-2.185A4.392 4.392 0 0 1 4.51 4.51c.45-.458.994-.812 1.595-1.037.574-.224 1.226-.374 2.185-.419C9.25 3.012 9.555 3 12 3Z"></path>
                     </svg>
                   </a>
                 </li>
               </ul>
+            </div>
             </div>
 
             {/* Decorative Circle */}
@@ -107,9 +109,9 @@ const ContactFormSection = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="w-full px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:col-span-3">
-            <form onSubmit={handleSubmit}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          <div className="lg:col-span-3">
+            <form onSubmit={handleSubmit} className="h-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
                 {/* First Name */}
                 <div className="relative flex items-center w-full">
                   <input
@@ -119,9 +121,9 @@ const ContactFormSection = () => {
                     value={formData.firstName}
                     onChange={handleChange}
                     required
-                    className="px-2 py-3 bg-slate-800/50 w-full text-sm text-white border-b border-violet-500/30 focus:border-violet-500 outline-none placeholder-gray-500"
+                    className="px-2 py-2 sm:py-3 bg-slate-800/50 w-full text-xs sm:text-sm text-white border-b border-violet-500/30 focus:border-violet-500 outline-none placeholder-gray-500"
                   />
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="#8b5cf6" stroke="#8b5cf6" className="w-4 h-4 absolute right-2" viewBox="0 0 24 24">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="#8b5cf6" stroke="#8b5cf6" className="w-3.5 h-3.5 sm:w-4 sm:h-4 absolute right-2" viewBox="0 0 24 24">
                     <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
                     <path d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z" data-original="#000000"></path>
                   </svg>
@@ -136,9 +138,9 @@ const ContactFormSection = () => {
                     value={formData.lastName}
                     onChange={handleChange}
                     required
-                    className="px-2 py-3 bg-slate-800/50 w-full text-sm text-white border-b border-violet-500/30 focus:border-violet-500 outline-none placeholder-gray-500"
+                    className="px-2 py-2 sm:py-3 bg-slate-800/50 w-full text-xs sm:text-sm text-white border-b border-violet-500/30 focus:border-violet-500 outline-none placeholder-gray-500"
                   />
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="#8b5cf6" stroke="#8b5cf6" className="w-4 h-4 absolute right-2" viewBox="0 0 24 24">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="#8b5cf6" stroke="#8b5cf6" className="w-3.5 h-3.5 sm:w-4 sm:h-4 absolute right-2" viewBox="0 0 24 24">
                     <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
                     <path d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z" data-original="#000000"></path>
                   </svg>
@@ -153,9 +155,9 @@ const ContactFormSection = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="px-2 py-3 bg-slate-800/50 w-full text-sm text-white border-b border-violet-500/30 focus:border-violet-500 outline-none placeholder-gray-500"
+                    className="px-2 py-2 sm:py-3 bg-slate-800/50 w-full text-xs sm:text-sm text-white border-b border-violet-500/30 focus:border-violet-500 outline-none placeholder-gray-500"
                   />
-                  <svg fill="#8b5cf6" className="w-4 h-4 absolute right-2" viewBox="0 0 64 64">
+                  <svg fill="#8b5cf6" className="w-3.5 h-3.5 sm:w-4 sm:h-4 absolute right-2" viewBox="0 0 64 64">
                     <path d="m52.148 42.678-6.479-4.527a5 5 0 0 0-6.963 1.238l-1.504 2.156c-2.52-1.69-5.333-4.05-8.014-6.732-2.68-2.68-5.04-5.493-6.73-8.013l2.154-1.504a4.96 4.96 0 0 0 2.064-3.225 4.98 4.98 0 0 0-.826-3.739l-4.525-6.478C20.378 10.5 18.85 9.69 17.24 9.69a4.69 4.69 0 0 0-1.628.291 8.97 8.97 0 0 0-1.685.828l-.895.63a6.782 6.782 0 0 0-.63.563c-1.092 1.09-1.866 2.472-2.303 4.104-1.865 6.99 2.754 17.561 11.495 26.301 7.34 7.34 16.157 11.9 23.011 11.9 1.175 0 2.281-.136 3.29-.406 1.633-.436 3.014-1.21 4.105-2.302.199-.199.388-.407.591-.67l.63-.899a9.007 9.007 0 0 0 .798-1.64c.763-2.06-.007-4.41-1.871-5.713z" data-original="#000000"></path>
                   </svg>
                 </div>
@@ -169,9 +171,9 @@ const ContactFormSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="px-2 py-3 bg-slate-800/50 w-full text-sm text-white border-b border-violet-500/30 focus:border-violet-500 outline-none placeholder-gray-500"
+                    className="px-2 py-2 sm:py-3 bg-slate-800/50 w-full text-xs sm:text-sm text-white border-b border-violet-500/30 focus:border-violet-500 outline-none placeholder-gray-500"
                   />
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="#8b5cf6" stroke="#8b5cf6" className="w-4 h-4 absolute right-2" viewBox="0 0 682.667 682.667">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="#8b5cf6" stroke="#8b5cf6" className="w-3.5 h-3.5 sm:w-4 sm:h-4 absolute right-2" viewBox="0 0 682.667 682.667">
                     <defs>
                       <clipPath id="a" clipPathUnits="userSpaceOnUse">
                         <path d="M0 512h512V0H0Z" data-original="#000000"></path>
@@ -185,17 +187,17 @@ const ContactFormSection = () => {
                 </div>
 
                 {/* Message */}
-                <div className="relative flex items-center col-span-full w-full">
+                <div className="relative flex items-start col-span-full w-full">
                   <textarea
                     name="message"
                     placeholder="Write Message"
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows="4"
-                    className="px-2 pt-3 bg-slate-800/50 w-full text-sm text-white border-b border-violet-500/30 focus:border-violet-500 outline-none resize-none placeholder-gray-500"
+                    rows="3"
+                    className="px-2 pt-2 sm:pt-3 bg-slate-800/50 w-full text-xs sm:text-sm text-white border-b border-violet-500/30 focus:border-violet-500 outline-none resize-none placeholder-gray-500"
                   ></textarea>
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="#8b5cf6" stroke="#8b5cf6" className="w-4 h-4 absolute right-2 top-3" viewBox="0 0 682.667 682.667">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="#8b5cf6" stroke="#8b5cf6" className="w-3.5 h-3.5 sm:w-4 sm:h-4 absolute right-2 top-2 sm:top-3" viewBox="0 0 682.667 682.667">
                     <defs>
                       <clipPath id="b" clipPathUnits="userSpaceOnUse">
                         <path d="M0 512h512V0H0Z" data-original="#000000"></path>
@@ -210,8 +212,8 @@ const ContactFormSection = () => {
 
                 {/* Subject Selection */}
                 <div className="col-span-full">
-                  <h6 className="text-sm sm:text-base text-white font-medium">Select Subject</h6>
-                  <div className="flex flex-wrap gap-4 sm:gap-6 mt-3 sm:mt-4">
+                  <h6 className="text-xs sm:text-sm md:text-base text-white font-medium">Select Subject</h6>
+                  <div className="flex flex-wrap gap-3 sm:gap-4 md:gap-6 mt-2 sm:mt-3">
                     <div className="flex items-center">
                       <input
                         id="radio1"
@@ -224,11 +226,11 @@ const ContactFormSection = () => {
                       />
                       <label
                         htmlFor="radio1"
-                        className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-slate-800 w-5 h-5 cursor-pointer border-2 border-violet-500 rounded-full overflow-hidden"
+                        className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-slate-800 w-4 h-4 sm:w-5 sm:h-5 cursor-pointer border-2 border-violet-500 rounded-full overflow-hidden"
                       >
-                        <span className="border-4 border-violet-500 rounded-full w-full h-full"></span>
+                        <span className="border-3 sm:border-4 border-violet-500 rounded-full w-full h-full"></span>
                       </label>
-                      <p className="text-xs sm:text-sm text-gray-300 ml-2 sm:ml-3">General Inquiry</p>
+                      <p className="text-[10px] sm:text-xs md:text-sm text-gray-300 ml-1.5 sm:ml-2">General Inquiry</p>
                     </div>
                     <div className="flex items-center">
                       <input
@@ -242,11 +244,11 @@ const ContactFormSection = () => {
                       />
                       <label
                         htmlFor="radio2"
-                        className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-slate-800 w-5 h-5 cursor-pointer border-2 border-violet-500 rounded-full overflow-hidden"
+                        className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-slate-800 w-4 h-4 sm:w-5 sm:h-5 cursor-pointer border-2 border-violet-500 rounded-full overflow-hidden"
                       >
-                        <span className="border-4 border-violet-500 rounded-full w-full h-full"></span>
+                        <span className="border-3 sm:border-4 border-violet-500 rounded-full w-full h-full"></span>
                       </label>
-                      <p className="text-xs sm:text-sm text-gray-300 ml-2 sm:ml-3">Technical Support</p>
+                      <p className="text-[10px] sm:text-xs md:text-sm text-gray-300 ml-1.5 sm:ml-2">Technical Support</p>
                     </div>
                     <div className="flex items-center">
                       <input
@@ -260,26 +262,28 @@ const ContactFormSection = () => {
                       />
                       <label
                         htmlFor="radio3"
-                        className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-slate-800 w-5 h-5 cursor-pointer border-2 border-violet-500 rounded-full overflow-hidden"
+                        className="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-slate-800 w-4 h-4 sm:w-5 sm:h-5 cursor-pointer border-2 border-violet-500 rounded-full overflow-hidden"
                       >
-                        <span className="border-4 border-violet-500 rounded-full w-full h-full"></span>
+                        <span className="border-3 sm:border-4 border-violet-500 rounded-full w-full h-full"></span>
                       </label>
-                      <p className="text-xs sm:text-sm text-gray-300 ml-2 sm:ml-3">Website Feedback</p>
+                      <p className="text-[10px] sm:text-xs md:text-sm text-gray-300 ml-1.5 sm:ml-2">Website Feedback</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Submit Button */}
-              <button
-                type="submit"
-                className="mt-8 sm:mt-12 flex items-center justify-center text-sm font-medium lg:ml-auto max-lg:w-full rounded-lg px-6 py-3 tracking-wide cursor-pointer text-white bg-linear-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 transition-all shadow-lg shadow-violet-500/50 hover:shadow-xl hover:shadow-violet-500/60"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" fill="#fff" className="mr-2" viewBox="0 0 548.244 548.244">
-                  <path fillRule="evenodd" d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z" clipRule="evenodd" data-original="#000000" />
-                </svg>
-                Send Message
-              </button>
+              <div className="flex justify-center mt-6 sm:mt-8 lg:mt-12">
+                <button
+                  type="submit"
+                  className="flex items-center justify-center text-xs sm:text-sm font-medium w-full sm:w-auto rounded-lg px-6 sm:px-8 lg:px-10 py-2.5 sm:py-3 tracking-wide cursor-pointer text-white bg-linear-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 transition-all shadow-lg shadow-violet-500/50 hover:shadow-xl hover:shadow-violet-500/60"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" className="sm:w-4 sm:h-4" fill="#fff" viewBox="0 0 548.244 548.244">
+                    <path fillRule="evenodd" d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z" clipRule="evenodd" data-original="#000000" />
+                  </svg>
+                  <span className="ml-1.5 sm:ml-2">Send Message</span>
+                </button>
+              </div>
             </form>
           </div>
         </div>
