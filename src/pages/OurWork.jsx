@@ -3,7 +3,6 @@ import HeroSection from '../components/OurWork/HeroSection'
 import PortfolioGrid from '../components/OurWork/PortfolioGrid'
 import Industries from '../components/OurWork/Industries'
 import CreativeProcess from '../components/OurWork/CreativeProcess'
-import Awards from '../components/OurWork/Awards'
 import CallToAction from '../components/OurWork/CallToAction'
 
 const OurWork = () => {
@@ -13,7 +12,6 @@ const OurWork = () => {
       <PortfolioGrid />
       <Industries />
       <CreativeProcess />
-      <Awards />
       <CallToAction />
     </div>
   )

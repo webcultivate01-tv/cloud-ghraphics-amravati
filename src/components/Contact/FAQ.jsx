@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { IoChevronDown } from 'react-icons/io5'
 
 const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState(null)
+
   const faqs = [
     {
       question: 'What is your typical project timeline?',
@@ -24,6 +27,10 @@ const FAQ = () => {
     }
   ]
 
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index)
+  }
+
   return (
     <section className="py-12 px-6 lg:px-12">
       <div className="max-w-4xl mx-auto">
@@ -40,17 +47,51 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-slate-900/50 backdrop-blur-xl border border-violet-500/20 rounded-2xl p-6 hover:border-violet-500/50 transition-all"
+              className={`group bg-slate-900/50 backdrop-blur-xl border rounded-2xl overflow-hidden transition-all duration-300 ${
+                openIndex === index 
+                  ? 'border-violet-500/80 shadow-lg shadow-violet-500/20' 
+                  : 'border-violet-500/20 hover:border-violet-500/40'
+              }`}
             >
-              <h3 className="text-lg font-bold text-white mb-3 flex items-start gap-3">
-                <span className="text-violet-400 shrink-0">Q:</span>
-                <span>{faq.question}</span>
-              </h3>
-              <p className="text-gray-400 leading-relaxed pl-8">
-                <span className="text-fuchsia-400 font-bold">A:</span> {faq.answer}
-              </p>
+              <button
+                onClick={() => toggleFAQ(index)}
+                className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
+              >
+                <div className="flex items-start gap-3 flex-1">
+                  <span className="text-violet-400 shrink-0 font-bold text-lg mt-0.5">Q{index + 1}:</span>
+                  <h3 className="text-lg font-bold text-white group-hover:text-violet-300 transition-colors">
+                    {faq.question}
+                  </h3>
+                </div>
+                <IoChevronDown 
+                  className={`w-6 h-6 text-violet-400 shrink-0 transition-transform duration-300 ${
+                    openIndex === index ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+              
+              <div 
+                className={`overflow-hidden transition-all duration-300 ${
+                  openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
+                <div className="px-6 pb-6 pl-14">
+                  <div className="bg-linear-to-r from-violet-500/10 to-fuchsia-500/10 rounded-xl p-4 border-l-4 border-fuchsia-500">
+                    <p className="text-gray-300 leading-relaxed">
+                      <span className="text-fuchsia-400 font-bold">A:</span> {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
+        </div>
+
+        {/* Decorative elements */}
+        <div className="mt-12 text-center">
+          <p className="text-gray-500 text-sm">
+            Still have questions? <a href="#contact-form" className="text-violet-400 hover:text-violet-300 font-semibold transition-colors">Get in touch</a>
+          </p>
         </div>
       </div>
     </section>

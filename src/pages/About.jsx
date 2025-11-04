@@ -2,7 +2,6 @@ import React from 'react'
 import HeroSection from '../components/About/HeroSection'
 import OurStory from '../components/About/OurStory'
 import CoreValues from '../components/About/CoreValues'
-import Timeline from '../components/About/Timeline'
 import CallToAction from '../components/About/CallToAction'
 
 const About = () => {
@@ -11,7 +10,6 @@ const About = () => {
       <HeroSection />
       <OurStory />
       <CoreValues />
-      <Timeline />
       <CallToAction />
     </div>
   )
