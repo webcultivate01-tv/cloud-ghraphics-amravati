@@ -96,11 +96,11 @@ const HeroSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-6 sm:pt-8 max-w-md mx-auto lg:mx-0">
+            {/* <div className="grid grid-cols-3 gap-3 sm:gap-6 pt-6 sm:pt-8 max-w-md mx-auto lg:mx-0">
               {stats.map((stat, index) => (
                 <StatCard key={index} value={stat.value} label={stat.label} />
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Right Content - Creative Grid */}

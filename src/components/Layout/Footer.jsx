@@ -208,9 +208,9 @@ const Footer = () => {
 
             {/* Credit Badge */}
             <div className="flex flex-col items-center text-center px-4 py-2 text-xs text-gray-400">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-[70px] lg:h-[70px] rounded-full overflow-hidden flex items-center justify-center">
+              {/* <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-[70px] lg:h-[70px] rounded-full overflow-hidden flex items-center justify-center">
                 <img src={logo} alt="WebCultivate Logo" className="w-full h-full object-cover" />
-              </div>
+              </div> */}
               <p className="mt-2 sm:mt-3 text-[11px] sm:text-[12px]">
                 Designed and Developed by{" "}
                 <a
