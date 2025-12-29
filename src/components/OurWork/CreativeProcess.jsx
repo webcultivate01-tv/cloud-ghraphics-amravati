@@ -6,7 +6,7 @@ const CreativeProcess = () => {
       step: '01',
       icon: '💡',
       title: 'Ideation',
-      description: 'Brainstorming creative concepts and gathering inspiration'
+      description: 'Generating creative ideas and inspiration'
     },
     {
       step: '02',
@@ -39,8 +39,9 @@ const CreativeProcess = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
-              Our Creative Process 🎨
+            {/* bg-linear-to-r from-violet-400  */}
+            <span className="text-white via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
+              Our Creative Process 
             </span>
           </h2>
           <p className="text-gray-400 text-lg">From concept to completion, here's how we work</p>
@@ -55,9 +56,6 @@ const CreativeProcess = () => {
               <div key={index} className="relative">
                 <div className="bg-slate-900/50 backdrop-blur-xl border border-violet-500/20 rounded-2xl p-6 hover:border-violet-500/50 transition-all group">
                   <div className="text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-linear-to-br from-violet-500 to-fuchsia-500 rounded-2xl text-white font-bold text-xl mb-4 shadow-lg group-hover:scale-110 transition-transform">
-                      {process.step}
-                    </div>
                     <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">{process.icon}</div>
                     <h3 className="text-xl font-bold text-white mb-2">{process.title}</h3>
                     <p className="text-gray-400 text-sm leading-relaxed">{process.description}</p>

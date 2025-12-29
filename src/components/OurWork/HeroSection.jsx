@@ -1,16 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 const HeroSection = () => {
   const galleryImages = [
-    { id: 1, src: "/Photos/Our work page/work1.png", alt: "Creative Work 1" },
-    { id: 2, src: "/Photos/Our work page/work2.jpg", alt: "Creative Work 2" },
-    { id: 3, src: "/Photos/Our work page/work3.jpg", alt: "Creative Work 3" },
-    { id: 4, src: "/Photos/Our work page/work1.png", alt: "Creative Work 4" },
-    { id: 5, src: "/Photos/Our work page/work2.jpg", alt: "Creative Work 5" },
-    { id: 6, src: "/Photos/Our work page/work3.jpg", alt: "Creative Work 6" },
+    { id: 1, src: "work1.webp", alt: "Creative Work 1" },
+    { id: 2, src: "work2.webp", alt: "Creative Work 2" },
+    { id: 3, src: "work3.webp", alt: "Creative Work 3" },
+    { id: 4, src: "work4.webp", alt: "Creative Work 4" },
+    { id: 5, src: "work5.webp", alt: "Creative Work 5" },
+    { id: 6, src: "work6.webp", alt: "Creative Work 6" },
   ];
 
   const [featuredImage, setFeaturedImage] = useState(galleryImages[0]);
+  const [leftHeight, setLeftHeight] = useState(0);
+  const leftRef = useRef(null);
+
+  useEffect(() => {
+    // Set left side height on mount and resize
+    const updateHeight = () => {
+      if (leftRef.current) {
+        setLeftHeight(leftRef.current.offsetHeight);
+      }
+    };
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, [featuredImage]);
 
   const handleThumbnailClick = (image) => {
     setFeaturedImage(image);
@@ -27,28 +41,21 @@ const HeroSection = () => {
       <div className="w-full max-w-6xl text-center flex flex-col items-center justify-center">
         {/* Header Section */}
         <div className="mb-8 sm:mb-10">
-          <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/30 rounded-full px-5 py-2 mb-4 backdrop-blur-sm">
-            <span className="text-lg">🎨</span>
-            <span className="text-violet-300 font-medium text-sm sm:text-base">
-              Our Portfolio
-            </span>
-          </div>
-
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            <span className="bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
+            <span className="text-white via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
               Creative Work
             </span>
           </h1>
-
           <p className="text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
-            Transforming ideas into stunning visual experiences that captivate and inspire.
+            Transforming ideas into stunning visual experiences that captivate
+            and inspire.
           </p>
         </div>
 
         {/* Gallery Layout */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 w-full">
+        <div className="flex flex-col md:flex-row items-start justify-center gap-6 w-full">
           {/* Left - Featured Image */}
-          <div className="w-full md:w-[60%]">
+          <div ref={leftRef} className="w-full md:w-[60%]">
             <img
               src={featuredImage.src}
               alt={featuredImage.alt}
@@ -56,8 +63,11 @@ const HeroSection = () => {
             />
           </div>
 
-          {/* Right - Thumbnails (2 columns on desktop, 3 per row on mobile) */}
-          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-2 gap-3 w-full md:w-[35%] mt-4 md:mt-0">
+          {/* Right - Thumbnails */}
+          <div
+            className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-2 gap-3 w-full md:w-[35%]"
+            style={{ height: leftHeight }}
+          >
             {galleryImages.map((image) => (
               <div
                 key={image.id}
@@ -67,7 +77,7 @@ const HeroSection = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className={`w-full h-24 sm:h-28 md:h-32 rounded-md object-cover transition-all duration-300 hover:opacity-80 ${
+                  className={`w-full h-full rounded-md object-cover transition-all duration-300 hover:opacity-80 ${
                     featuredImage.id === image.id
                       ? "ring-2 ring-violet-500"
                       : "ring-1 ring-transparent"
@@ -81,7 +91,7 @@ const HeroSection = () => {
         {/* Bottom Stats */}
         <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-10 pt-10 border-t border-violet-500/10 mt-8">
           <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-bold bg-linear-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent mb-1">
+            <div className="text-3xl sm:text-4xl font-bold text-white bg-clip-text text-transparent mb-1">
               500+
             </div>
             <div className="text-gray-400 text-xs sm:text-sm uppercase tracking-wider">
@@ -90,7 +100,7 @@ const HeroSection = () => {
           </div>
           <div className="hidden md:block w-px h-10 bg-violet-500/20"></div>
           <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-bold bg-linear-to-r from-fuchsia-400 to-indigo-400 bg-clip-text text-transparent mb-1">
+            <div className="text-3xl sm:text-4xl font-bold text-white bg-clip-text text-transparent mb-1">
               200+
             </div>
             <div className="text-gray-400 text-xs sm:text-sm uppercase tracking-wider">
@@ -99,7 +109,7 @@ const HeroSection = () => {
           </div>
           <div className="hidden md:block w-px h-10 bg-violet-500/20"></div>
           <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-bold bg-linear-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent mb-1">
+            <div className="text-3xl sm:text-4xl font-bold text-white bg-clip-text text-transparent mb-1">
               4+
             </div>
             <div className="text-gray-400 text-xs sm:text-sm uppercase tracking-wider">

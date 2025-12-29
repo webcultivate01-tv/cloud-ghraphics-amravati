@@ -1,7 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 
 const Testimonials = () => {
@@ -36,26 +35,32 @@ const Testimonials = () => {
     <section className="py-20 px-6 lg:px-12 bg-slate-950">
       <div className="max-w-6xl mx-auto text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
-          <span className="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
-            Client Love 💖
+          <span className="text-white bg-clip-text text-transparent">
+            What Our Clients Say
           </span>
         </h2>
         <p className="text-gray-400 text-lg">
-          What our clients say about working with us
+          Hear directly from our clients about their experience working with us.
         </p>
       </div>
 
-      {/* ✅ Clean version of Swiper without background effects */}
       <Swiper
         spaceBetween={30}
-        slidesPerView={1}
         loop={true}
         autoplay={{
-          delay: 2500,
+          delay: 1500,
           disableOnInteraction: false,
         }}
         modules={[Autoplay]}
         className="max-w-4xl mx-auto"
+        breakpoints={{
+          0: {
+            slidesPerView: 1, // Mobile: show 1 slide
+          },
+          768: {
+            slidesPerView: 2, // Tablet and above: show 2 slides
+          },
+        }}
       >
         {testimonials.map((testimonial, index) => (
           <SwiperSlide key={index}>
@@ -64,7 +69,9 @@ const Testimonials = () => {
                 <div className="w-16 h-16 bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-2xl flex items-center justify-center text-3xl mb-4">
                   {testimonial.avatar}
                 </div>
-                <h4 className="text-white font-bold text-lg">{testimonial.name}</h4>
+                <h4 className="text-white font-bold text-lg">
+                  {testimonial.name}
+                </h4>
                 <p className="text-gray-400 text-sm mb-3">{testimonial.role}</p>
                 <div className="flex justify-center mb-3">
                   {[...Array(testimonial.rating)].map((_, i) => (

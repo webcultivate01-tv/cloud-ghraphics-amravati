@@ -1,35 +1,40 @@
-import React, { useState } from 'react'
-import { IoChevronDown } from 'react-icons/io5'
+import React, { useState } from "react";
+import { IoChevronDown } from "react-icons/io5";
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState(null)
+  const [openIndex, setOpenIndex] = useState(null);
 
   const faqs = [
     {
-      question: 'What is your typical project timeline?',
-      answer: 'Project timelines vary based on scope and complexity. A simple logo design typically takes 5-7 days, while complete brand identity projects may take 2-3 weeks. We always discuss timelines during the initial consultation.'
+      question: "What is your typical project timeline?",
+      answer:
+        "Project timelines vary based on scope and complexity. A simple logo design typically takes 5-7 days, while complete brand identity projects may take 2-3 weeks. We always discuss timelines during the initial consultation.",
     },
     {
-      question: 'Do you offer revisions?',
-      answer: 'Yes! We include revisions in all our packages. The number depends on the package you choose, with our Professional and Enterprise packages offering unlimited revisions.'
+      question: "Do you offer revisions?",
+      answer:
+        "Yes! We include revisions in all our packages. The number depends on the package you choose, with our Professional and Enterprise packages offering unlimited revisions.",
     },
     {
-      question: 'What are your payment terms?',
-      answer: 'We typically require 50% upfront to begin work, with the remaining 50% due upon completion and delivery of final files. For larger projects, we can arrange milestone-based payments.'
+      question: "What are your payment terms?",
+      answer:
+        "We typically require 50% upfront to begin work, with the remaining 50% due upon completion and delivery of final files. For larger projects, we can arrange milestone-based payments.",
     },
     {
-      question: 'Do you work with clients outside Amravati?',
-      answer: 'Absolutely! While we\'re based in Amravati, we work with clients across India and internationally. We conduct meetings via video calls and maintain smooth communication throughout the project.'
+      question: "Do you work with clients outside Amravati?",
+      answer:
+        "Absolutely! While we're based in Amravati, we work with clients across India and internationally. We conduct meetings via video calls and maintain smooth communication throughout the project.",
     },
     {
-      question: 'What file formats will I receive?',
-      answer: 'You\'ll receive all source files along with various export formats suitable for both print and digital use (AI, EPS, PDF, PNG, JPG, SVG, etc.), depending on your project requirements.'
-    }
-  ]
+      question: "What file formats will I receive?",
+      answer:
+        "You'll receive all source files along with various export formats suitable for both print and digital use (AI, EPS, PDF, PNG, JPG, SVG, etc.), depending on your project requirements.",
+    },
+  ];
 
   const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <section className="py-12 px-6 lg:px-12">
@@ -40,7 +45,9 @@ const FAQ = () => {
               Frequently Asked Questions ❓
             </span>
           </h2>
-          <p className="text-gray-400 text-lg">Quick answers to common questions</p>
+          <p className="text-gray-400 text-lg">
+            Quick answers to common questions
+          </p>
         </div>
 
         <div className="space-y-4">
@@ -48,9 +55,9 @@ const FAQ = () => {
             <div
               key={index}
               className={`group bg-slate-900/50 backdrop-blur-xl border rounded-2xl overflow-hidden transition-all duration-300 ${
-                openIndex === index 
-                  ? 'border-violet-500/80 shadow-lg shadow-violet-500/20' 
-                  : 'border-violet-500/20 hover:border-violet-500/40'
+                openIndex === index
+                  ? "border-violet-500/80 shadow-lg shadow-violet-500/20"
+                  : "border-violet-500/20 hover:border-violet-500/40"
               }`}
             >
               <button
@@ -58,27 +65,34 @@ const FAQ = () => {
                 className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer"
               >
                 <div className="flex items-start gap-3 flex-1">
-                  <span className="text-violet-400 shrink-0 font-bold text-lg mt-0.5">Q{index + 1}:</span>
-                  <h3 className="text-lg font-bold text-white group-hover:text-violet-300 transition-colors">
+                  <span className="text-violet-400 shrink-0 font-bold text-lg mt-0.5">
+                    Q{index + 1}:
+                  </span>
+                  <h3 className="text-sm font-bold text-white group-hover:text-violet-300 transition-colors">
                     {faq.question}
                   </h3>
                 </div>
-                <IoChevronDown 
+                <IoChevronDown
                   className={`w-6 h-6 text-violet-400 shrink-0 transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180' : ''
+                    openIndex === index ? "rotate-180" : ""
                   }`}
                 />
               </button>
-              
-              <div 
+
+              <div
                 className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  openIndex === index
+                    ? "max-h-96 opacity-100"
+                    : "max-h-0 opacity-0"
                 }`}
               >
                 <div className="px-6 pb-6 pl-14">
                   <div className="bg-linear-to-r from-violet-500/10 to-fuchsia-500/10 rounded-xl p-4 border-l-4 border-fuchsia-500">
                     <p className="text-gray-300 leading-relaxed">
-                      <span className="text-fuchsia-400 font-bold">A:</span> {faq.answer}
+                      <span className="text-sm text-fuchsia-400 font-bold">
+                        A:
+                      </span>{" "}
+                      {faq.answer}
                     </p>
                   </div>
                 </div>
@@ -86,16 +100,9 @@ const FAQ = () => {
             </div>
           ))}
         </div>
-
-        {/* Decorative elements */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-500 text-sm">
-            Still have questions? <a href="#contact-form" className="text-violet-400 hover:text-violet-300 font-semibold transition-colors">Get in touch</a>
-          </p>
-        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default FAQ
+export default FAQ;

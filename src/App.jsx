@@ -5,12 +5,10 @@ import About from './pages/About'
 import Services from './pages/Services'
 import Contacts from './pages/Contacts'
 import OurWork from './pages/OurWork'
-import CustomCursor from './components/CustomCursor'
 
 function App() {
   return (
     <>
-      <CustomCursor />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

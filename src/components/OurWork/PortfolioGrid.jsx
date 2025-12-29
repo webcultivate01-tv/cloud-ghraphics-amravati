@@ -1,4 +1,4 @@
-﻿import React from 'react'
+﻿import React from "react";
 
 const PortfolioGrid = () => {
   return (
@@ -6,7 +6,7 @@ const PortfolioGrid = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
-            <span className="bg-linear-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+            <span className="text-white to-fuchsia-400 bg-clip-text text-transparent">
               Our Creative Portfolio
             </span>
           </h2>
@@ -17,45 +17,93 @@ const PortfolioGrid = () => {
 
         <div className="columns-2 md:columns-3 lg:columns-4 space-y-4">
           <div className="bg-gray-100 rounded-lg overflow-hidden">
-            <img src="https://readymadeui.com/images/gallery-img-1.webp" alt="img-1" className="h-auto max-w-full object-cover object-top" />
+            <img
+              src="work7.webp"
+              alt="img-1"
+              className="h-auto max-w-full object-cover object-top"
+            />
           </div>
           <div className="bg-gray-100 rounded-lg overflow-hidden">
-            <img src="https://readymadeui.com/images/gallery-img-2.webp" alt="img-2" className="h-auto max-w-full object-cover object-top" />
+            <img
+              src="work8.webp"
+              alt="img-2"
+              className="h-auto max-w-full object-cover object-top"
+            />
           </div>
           <div className="bg-gray-100 rounded-lg overflow-hidden">
-            <img src="https://readymadeui.com/images/dark-green-tshirt-1.webp" alt="img-3" className="h-auto max-w-full object-cover object-top" />
+            <img
+              src="work9.webp"
+              alt="img-3"
+              className="h-auto max-w-full object-cover object-top"
+            />
           </div>
           <div className="bg-gray-100 rounded-lg overflow-hidden">
-            <img src="https://readymadeui.com/images/body-motion-category.webp" alt="img-4" className="h-auto max-w-full object-cover object-top" />
+            <img
+              src="work11.webp"
+              alt="img-4"
+              className="h-auto max-w-full object-cover object-top"
+            />
           </div>
           <div className="bg-gray-100 rounded-lg overflow-hidden">
-            <img src="https://readymadeui.com/images/gallery-img-5.webp" alt="img-5" className="h-auto max-w-full object-cover object-top" />
+            <img
+              src="work10.webp"
+              alt="img-5"
+              className="h-auto max-w-full object-cover object-top"
+            />
           </div>
           <div className="bg-gray-100 rounded-lg overflow-hidden">
-            <img src="https://readymadeui.com/images/gallery-img-6.webp" alt="img-6" className="h-auto max-w-full object-cover object-top" />
+            <img
+              src="work12.webp"
+              alt="img-6"
+              className="h-auto max-w-full object-cover object-top"
+            />
           </div>
           <div className="bg-gray-100 rounded-lg overflow-hidden">
-            <img src="https://readymadeui.com/images/gallery-img-7.webp" alt="img-7" className="h-auto max-w-full object-cover object-top" />
+            <img
+              src="work13.webp"
+              alt="img-7"
+              className="h-auto max-w-full object-cover object-top"
+            />
           </div>
           <div className="bg-gray-100 rounded-lg overflow-hidden">
-            <img src="https://readymadeui.com/images/gallery-img-8.webp" alt="img-8" className="h-auto max-w-full object-cover object-top" />
+            <img
+              src="work3.webp"
+              alt="img-8"
+              className="h-auto max-w-full object-cover object-top"
+            />
           </div>
           <div className="bg-gray-100 rounded-lg overflow-hidden">
-            <img src="https://readymadeui.com/images/sunscreen-img-3.webp" alt="img-9" className="h-auto max-w-full object-cover object-top" />
+            <img
+              src="https://readymadeui.com/images/sunscreen-img-3.webp"
+              alt="img-9"
+              className="h-auto max-w-full object-cover object-top"
+            />
           </div>
           <div className="bg-gray-100 rounded-lg overflow-hidden">
-            <img src="https://readymadeui.com/images/face-body-cream-img-2.webp" alt="img-10" className="h-auto max-w-full object-cover object-top" />
+            <img
+              src="work14.webp"
+              alt="img-10"
+              className="h-auto max-w-full object-cover object-top"
+            />
           </div>
           <div className="bg-gray-100 rounded-lg overflow-hidden">
-            <img src="https://readymadeui.com/images/gallery-img-9.webp" alt="img-11" className="h-auto max-w-full object-cover object-top" />
+            <img
+              src="https://readymadeui.com/images/face-body-cream-img-2.webp"
+              alt="img-11"
+              className="h-auto max-w-full object-cover object-top"
+            />
           </div>
           <div className="bg-gray-100 rounded-lg overflow-hidden">
-            <img src="https://readymadeui.com/images/gallery-img-3.webp" alt="img-12" className="h-auto max-w-full object-cover object-top" />
+            <img
+              src="work5.webp"
+              alt="img-12"
+              className="h-auto max-w-full object-cover object-top"
+            />
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default PortfolioGrid
+export default PortfolioGrid;

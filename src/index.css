@@ -1,31 +1,5 @@
 @import "tailwindcss";
 
-@layer base {
-  /* Apply the default "arrow" cursor to the whole page */
-  html {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"><path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill="%23ec4899" stroke="%23a855f7" stroke-width="1.5"/></svg>') 6 6, auto;
-    scroll-behavior: smooth;
-  }
-
-  /* Apply the "hand" cursor to all interactive elements by default */
-  a, button, .cursor-pointer, input[type="submit"], input[type="button"], select {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M9 11V6c0-.6.4-1 1-1s1 .4 1 1v4h.5V3c0-.6.4-1 1-1s1 .4 1 1v7h.5V4c0-.6.4-1 1-1s1 .4 1 1v6h.5V6c0-.6.4-1 1-1s1 .4 1 1v6.5c0 2.5-2 4.5-4.5 4.5h-1c-2.5 0-4.5-2-4.5-4.5V11h1z" fill="%23ec4899" stroke="%23a855f7" stroke-width="1.5"/><circle cx="12" cy="4" r="1.5" fill="%23ffffff" opacity="0.8"/></svg>') 18 6, pointer;
-  }
-}
-
-/* These styles below are all correct, no changes needed */
-.cursor-trail {
-  position: fixed;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #a855f7, #ec4899);
-  pointer-events: none;
-  z-index: 9999;
-  animation: trail-fade 0.6s ease-out forwards;
-  box-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
-}
-
 @keyframes trail-fade {
   0% {
     opacity: 0.8;
@@ -41,34 +15,26 @@
   .animation-delay-2000 {
     animation-delay: 2s;
   }
-  
+
   .animation-delay-3000 {
     animation-delay: 3s;
   }
-  
+
   .animation-delay-4000 {
     animation-delay: 4s;
   }
-  
+
   .animation-delay-5000 {
     animation-delay: 5s;
   }
-  
+
   .animation-delay-6000 {
     animation-delay: 6s;
   }
-  
+
   .scale-115 {
     transform: scale(1.15);
   }
-
-  /* === THIS IS THE FIX === */
-  /* This re-defines Tailwind's 'cursor-pointer' class to use your custom hand */
-  .cursor-pointer {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"><path d="M9 11V6c0-.6.4-1 1-1s1 .4 1 1v4h.5V3c0-.6.4-1 1-1s1 .4 1 1v7h.5V4c0-.6.4-1 1-1s1 .4 1 1v6h.5V6c0-.6.4-1 1-1s1 .4 1 1v6.5c0 2.5-2 4.5-4.5 4.5h-1c-2.5 0-4.5-2-4.5-4.5V11h1z" fill="%23ec4899" stroke="%23a855f7" stroke-width="1.5"/><circle cx="12" cy="4" r="1.5" fill="%23ffffff" opacity="0.8"/></svg>') 18 6, pointer;
-  }
-  /* === END OF FIX === */
-
 }
 
 @keyframes blob {
@@ -91,7 +57,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) translateX(0);
     opacity: 0.3;
   }
@@ -127,7 +94,8 @@
 }
 
 @keyframes pulse-slow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.6;
   }
   50% {
@@ -157,7 +125,8 @@
 
 /* Gradient Animation */
 @keyframes gradient {
-  0%, 100% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {
@@ -172,7 +141,8 @@
 
 /* Pulse Glow Animation for Form Highlight */
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 30px rgba(239, 68, 68, 0.6), 0 0 60px rgba(239, 68, 68, 0.4);
     border-color: rgb(239, 68, 68);
   }
