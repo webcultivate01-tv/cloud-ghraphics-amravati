@@ -13,29 +13,36 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen overflow-hidden bg-slate-950"
+    >
       {/* Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 bg-slate-950">
         <img
-          src="/Homebg.webp"
+          src="/Homebg.avif"
           alt="Hero Background"
           className="w-full h-full object-cover scale-110"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
         />
+
+        {/* Overlays */}
         <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/70 to-transparent" />
-        <div className="absolute inset-0 bg-linear-to-br from-violet-600/20 via-transparent to-fuchsia-600/20 animate-pulse-slow" />
+        <div className="absolute inset-0 bg-linear-to-br from-violet-600/20 via-transparent to-fuchsia-600/20 motion-safe:animate-pulse-slow" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.45)_100%)]" />
       </div>
 
-      {/* Content Wrapper */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center lg:block">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full pt-0 lg:pt-32 pb-0 lg:pb-32">
+      {/* Content */}
+      <div className="relative z-10 min-h-screen flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full pt-32 pb-32">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             {/* Text */}
             <motion.div
               className="space-y-6 sm:space-y-8 text-center lg:text-left"
               initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              animate="visible"
             >
               <motion.span
                 className="inline-block bg-violet-500/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30"
@@ -88,14 +95,14 @@ const HeroSection = () => {
               </motion.div>
             </motion.div>
 
-            {/* Empty right column */}
+            {/* Right empty column */}
             <div className="hidden lg:block" />
           </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 hidden sm:block">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden sm:block">
         <div className="flex flex-col items-center animate-bounce">
           <span className="text-gray-400 text-sm mb-2">Scroll Down</span>
           <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
