@@ -1,113 +1,75 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
 
 const HeroSection = () => {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (custom = 0) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: custom * 0.2, duration: 0.8, ease: "easeOut" },
-    }),
+  const slides = [
+    { id: 1, image: "/hhero1.jpeg", alt: "Transforming Ideas Into Visual Art" },
+    { id: 2, image: "/hhero2.jpeg", alt: "Creative Branding Solutions" },
+    { id: 3, image: "/hhero3.jpeg", alt: "Digital Excellence" },
+    { id: 4, image: "/hhero4.jpeg", alt: "Premium Design Solutions" },
+    { id: 5, image: "/hhero5.jpeg", alt: "Innovative Digital Marketing" },
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto-play
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
   return (
-    <section
-      id="home"
-      className="relative min-h-screen overflow-hidden bg-slate-950"
-    >
-      {/* Background */}
-      <div className="absolute inset-0 bg-slate-950">
+    <section className="relative h-[60vh] sm:min-h-screen overflow-hidden bg-slate-950 pt-24">
+      {/* Background Image */}
+      <div className="absolute inset-0 top-24">
         <img
-          src="/Homebg.avif"
-          alt="Hero Background"
-          className="w-full h-full object-cover scale-110"
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
+          src={slides[currentSlide].image}
+          alt={slides[currentSlide].alt}
+          className="w-full h-full object-cover transition-all duration-1000"
         />
-
-        {/* Overlays */}
-        <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/70 to-transparent" />
-        <div className="absolute inset-0 bg-linear-to-br from-violet-600/20 via-transparent to-fuchsia-600/20 motion-safe:animate-pulse-slow" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.45)_100%)]" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 min-h-screen flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full pt-32 pb-32">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            {/* Text */}
-            <motion.div
-              className="space-y-6 sm:space-y-8 text-center lg:text-left"
-              initial="hidden"
-              animate="visible"
-            >
-              <motion.span
-                className="inline-block bg-violet-500/20 text-violet-300 px-4 py-2 rounded-full text-sm font-medium border border-violet-500/30"
-                variants={fadeInUp}
-                custom={0}
-              >
-                Professional Graphic Design Studio in Amravati
-              </motion.span>
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 text-white text-4xl hover:text-gray-300 transition-colors"
+      >
+        &lt;
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 text-white text-4xl hover:text-gray-300 transition-colors"
+      >
+        &gt;
+      </button>
 
-              <motion.h1
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight"
-                variants={fadeInUp}
-                custom={1}
-              >
-                Transforming
-                <span className="block bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
-                  Your Ideas
-                </span>
-                Into Art
-              </motion.h1>
-
-              <motion.p
-                className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0"
-                variants={fadeInUp}
-                custom={2}
-              >
-                I craft stunning graphics, memorable brands, and digital
-                experiences that make your business stand out in the crowd.
-              </motion.p>
-
-              <motion.div
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-                variants={fadeInUp}
-                custom={3}
-              >
-                <Link to="/work">
-                  <button className="group bg-linear-to-r from-violet-600 to-fuchsia-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition">
-                    View My Work
-                    <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">
-                      →
-                    </span>
-                  </button>
-                </Link>
-
-                <Link to="/contact">
-                  <button className="border-2 border-violet-400 text-violet-300 px-8 py-4 rounded-full font-semibold hover:bg-violet-500/10 transition">
-                    Let's Talk
-                  </button>
-                </Link>
-              </motion.div>
-            </motion.div>
-
-            {/* Right empty column */}
-            <div className="hidden lg:block" />
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden sm:block">
-        <div className="flex flex-col items-center animate-bounce">
-          <span className="text-gray-400 text-sm mb-2">Scroll Down</span>
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-            <div className="w-1.5 h-3 bg-gray-400 rounded-full mt-2" />
-          </div>
+      {/* Navigation Dots */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
+        <div className="flex gap-3">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                index === currentSlide 
+                  ? 'bg-white' 
+                  : 'bg-white/50 hover:bg-white/75'
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>

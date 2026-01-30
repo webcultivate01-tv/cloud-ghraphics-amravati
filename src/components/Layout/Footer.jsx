@@ -133,18 +133,20 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="flex flex-wrap max-md:flex-col gap-4">
         <ul className="md:flex md:space-x-6 max-md:space-y-2">
-          {["Terms of Service", "Privacy Policy", "Security"].map(
-            (item, index) => (
-              <li key={index}>
-                <Link
-                  to="#"
-                  className="hover:text-slate-500 text-slate-400 text-sm font-normal"
-                >
-                  {item}
-                </Link>
-              </li>
-            )
-          )}
+          {[
+            { name: "Terms of Service", to: "/terms" },
+            { name: "Privacy Policy", to: "/privacy" },
+            { name: "Security", to: "#" }
+          ].map((item, index) => (
+            <li key={index}>
+              <Link
+                to={item.to}
+                className="hover:text-slate-500 text-slate-400 text-sm font-normal"
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
         {/* <p className="text-slate-400 text-sm md:ml-auto">
           Developed By <a href="https://webcultivate.com"> WebCultivate</a>

@@ -76,49 +76,46 @@ const AboutPreview = () => {
             variants={fadeInUp}
             custom={0}
           >
-            {/* Main Image Card */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl sm:hover:scale-105 transition-transform duration-500 w-full sm:max-w-sm mx-auto">
-              <div className="w-full bg-linear-to-br from-violet-600 via-fuchsia-600 to-indigo-600 p-1">
-                <div className="bg-slate-900 rounded-3xl p-6 sm:p-8 flex items-center justify-center min-h-[300px] sm:min-h-[350px]">
-                  <div className="text-center space-y-5">
-                    <div className="relative inline-block">
-                      <div className="absolute inset-0 bg-violet-500 blur-2xl opacity-50 animate-pulse"></div>
-                      <div className="relative text-5xl sm:text-6xl mb-4">
-                        🎨
-                      </div>
+            {/* Main Image */}
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
+              <img
+                src="/abouthero.png"
+                alt="About Cloud Graphics"
+                className="w-full h-[400px] object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-transparent"></div>
+              
+              {/* Overlay Content */}
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+                  <div className="flex items-center gap-4">
+                    <div className="w-16 h-16 bg-linear-to-br from-violet-500 to-fuchsia-500 rounded-full flex items-center justify-center text-2xl">
+                      🎨
                     </div>
-                    <h3 className="text-white text-2xl sm:text-3xl font-bold leading-tight">
-                      Creative
-                      <span className="block bg-linear-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent mt-1">
-                        Excellence
-                      </span>
-                    </h3>
-                    <p className="text-gray-300 text-base sm:text-lg leading-relaxed px-2">
-                      Transforming ideas into stunning visual masterpieces that
-                      captivate and inspire
-                    </p>
+                    <div>
+                      <h3 className="text-white text-xl font-bold">Creative Excellence</h3>
+                      <p className="text-gray-300 text-sm">Transforming ideas into visual masterpieces</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Floating Cards */}
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-2xl transform -rotate-6 hidden lg:block">
-              <div className="flex items-center gap-4">
-                <div className="text-4xl">⚡</div>
-                <div>
-                  <div className="font-bold text-lg">Fast Delivery</div>
-                  <div className="text-gray-600 text-sm">
-                    On-time, every time
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute -top-5 right-4 bg-white rounded-2xl p-4 shadow-2xl transform rotate-6 hidden lg:block">
+            {/* Floating Stats Cards */}
+            <div className="absolute -top-6 -right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 shadow-2xl hidden lg:block">
               <div className="text-center">
-                <div className="text-4xl mb-2">🏆</div>
-                <div className="font-bold">Quality First</div>
+                <div className="text-2xl font-bold text-white">500+</div>
+                <div className="text-gray-300 text-sm">Projects</div>
+              </div>
+            </div>
+
+            <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 shadow-2xl hidden lg:block">
+              <div className="flex items-center gap-3">
+                <div className="text-2xl">⚡</div>
+                <div>
+                  <div className="font-bold text-white">Fast Delivery</div>
+                  <div className="text-gray-300 text-sm">On-time, every time</div>
+                </div>
               </div>
             </div>
           </motion.div>
