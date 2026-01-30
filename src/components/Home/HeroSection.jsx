@@ -10,6 +10,31 @@ const HeroSection = () => {
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Preload images
+  useEffect(() => {
+    const preloadImages = async () => {
+      const imagePromises = slides.map((slide) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = resolve;
+          img.onerror = reject;
+          img.src = slide.image;
+        });
+      });
+      
+      try {
+        await Promise.all(imagePromises);
+        setImagesLoaded(true);
+      } catch (error) {
+        console.error('Error loading images:', error);
+        setImagesLoaded(true); // Still show component even if some images fail
+      }
+    };
+    
+    preloadImages();
+  }, [slides]);
 
   // Auto-play
   useEffect(() => {
@@ -35,11 +60,21 @@ const HeroSection = () => {
     <section className="relative h-[60vh] sm:min-h-screen overflow-hidden bg-slate-950 pt-24">
       {/* Background Image */}
       <div className="absolute inset-0 top-24">
-        <img
-          src={slides[currentSlide].image}
-          alt={slides[currentSlide].alt}
-          className="w-full h-full object-cover transition-all duration-1000"
-        />
+        {imagesLoaded ? (
+          <img
+            src={slides[currentSlide].image}
+            alt={slides[currentSlide].alt}
+            className="w-full h-full object-cover transition-all duration-1000"
+            onError={(e) => {
+              console.error('Image failed to load:', e.target.src);
+              e.target.style.display = 'none';
+            }}
+          />
+        ) : (
+          <div className="w-full h-full bg-slate-800 flex items-center justify-center">
+            <div className="text-white text-xl">Loading...</div>
+          </div>
+        )}
       </div>
 
       {/* Navigation Arrows */}
